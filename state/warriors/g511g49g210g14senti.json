@@ -1,9 +1,10 @@
 {
-  "id": "g38g29g11sentineldw",
-  "name": "g38g29g11sentineldw",
+  "id": "g511g49g210g14senti",
+  "name": "g511g49g210g14senti",
   "parentIds": [
-    "g29g11sentineldwarf"
+    "g49g210g14sentineld"
   ],
+  "mutationDelta": "b-operand 8→10",
   "instructions": [
     {
       "opcode": "ADD",
@@ -14,9 +15,9 @@
       },
       "b": {
         "mode": "$",
-        "value": 3
+        "value": 10
       },
-      "raw": "ADD.F #4, 3"
+      "raw": "ADD.F #4, 10"
     },
     {
       "opcode": "ADD",
@@ -53,53 +54,40 @@
       },
       "b": {
         "mode": "$",
-        "value": -5
-      },
-      "raw": "JMP.F -2, -5"
-    },
-    {
-      "opcode": "DAT",
-      "modifier": "F",
-      "a": {
-        "mode": "#",
         "value": 0
       },
-      "b": {
-        "mode": "#",
-        "value": 0
-      },
-      "raw": "DAT.F #0, #0"
+      "raw": "JMP.F -2, 0"
     }
   ],
   "start": 0,
-  "source": ";name g38g29g11sentineldw\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
+  "source": ";name g511g49g210g14senti\norg 0\nADD.F #4, 10\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "generation": 5,
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
-    "losses": 3,
+    "wins": 5,
+    "losses": 1,
     "ties": 2
   },
-  "score": 11.18,
-  "displayName": "Neon Comet",
+  "score": 17.15,
   "benchmarkRecord": {
-    "wins": 2,
-    "losses": 3,
-    "ties": 3
+    "wins": 4,
+    "losses": 2,
+    "ties": 2
   },
-  "benchmarkScore": 9.18,
-  "genomeHash": "736d632a1e84ce4b",
-  "currentLeagueRank": 7,
+  "benchmarkScore": 14.15,
+  "displayName": "Moss Engine",
+  "genomeHash": "8148f6e3bc2bcd42",
+  "currentLeagueRank": 1,
   "semantic": {
     "schemaVersion": 1,
-    "instructionCount": 5,
+    "instructionCount": 4,
     "opcodeCounts": {
       "ADD": 2,
       "MOV": 1,
-      "JMP": 1,
-      "DAT": 1
+      "JMP": 1
     },
     "addressingModeCounts": {
-      "#": 4,
+      "#": 2,
       "$": 5,
       "@": 1
     },
@@ -118,7 +106,7 @@
         "opcode": "ADD",
         "step": 4,
         "targetMode": "$",
-        "targetOffset": 3
+        "targetOffset": 10
       },
       {
         "at": 1,
@@ -128,42 +116,41 @@
         "targetOffset": 3
       }
     ],
-    "genomeHash": "736d632a1e84ce4b",
-    "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "genomeHash": "8148f6e3bc2bcd42",
+    "normalizedGenome": "ADD.F #4,$10\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
     "facts": [
-      "5 instructions",
+      "4 instructions",
       "contains a backward JMP forming a 2-instruction loop",
       "ADD uses fixed immediate step 4",
       "ADD uses fixed immediate step 4"
     ]
   },
   "status": "active",
-  "retentionReason": "retained as roster fill after evidence lanes",
+  "retentionReason": "retained as broad competitor",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 3,
-      "losses": 3,
+      "wins": 5,
+      "losses": 1,
       "ties": 2
     },
     "benchmarkRecord": {
-      "wins": 2,
-      "losses": 3,
-      "ties": 3
+      "wins": 4,
+      "losses": 2,
+      "ties": 2
     },
-    "currentLeagueRank": 7,
-    "summary": "current league rank #7; current league record: 3W / 2D / 3L"
+    "currentLeagueRank": 1,
+    "summary": "current league record: 5W / 2D / 1L; benchmark record: 4W / 2D / 2L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
-    "instructionCount": 5,
+    "instructionCount": 4,
     "opcodeCounts": {
       "ADD": 2,
       "MOV": 1,
-      "JMP": 1,
-      "DAT": 1
+      "JMP": 1
     },
     "addressingModeCounts": {
-      "#": 4,
+      "#": 2,
       "$": 5,
       "@": 1
     },
@@ -182,7 +169,7 @@
         "opcode": "ADD",
         "step": 4,
         "targetMode": "$",
-        "targetOffset": 3
+        "targetOffset": 10
       },
       {
         "at": 1,
@@ -192,10 +179,10 @@
         "targetOffset": 3
       }
     ],
-    "genomeHash": "736d632a1e84ce4b",
-    "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "genomeHash": "8148f6e3bc2bcd42",
+    "normalizedGenome": "ADD.F #4,$10\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
     "facts": [
-      "5 instructions",
+      "4 instructions",
       "contains a backward JMP forming a 2-instruction loop",
       "ADD uses fixed immediate step 4",
       "ADD uses fixed immediate step 4"

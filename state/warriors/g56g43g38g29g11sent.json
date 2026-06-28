@@ -1,22 +1,23 @@
 {
-  "id": "g38g29g11sentineldw",
-  "name": "g38g29g11sentineldw",
+  "id": "g56g43g38g29g11sent",
+  "name": "g56g43g38g29g11sent",
   "parentIds": [
-    "g29g11sentineldwarf"
+    "g43g38g29g11sentine"
   ],
+  "mutationDelta": "a-operand 2→5",
   "instructions": [
     {
       "opcode": "ADD",
       "modifier": "F",
       "a": {
         "mode": "#",
-        "value": 4
+        "value": 0
       },
       "b": {
         "mode": "$",
         "value": 3
       },
-      "raw": "ADD.F #4, 3"
+      "raw": "ADD.F #0, 3"
     },
     {
       "opcode": "ADD",
@@ -36,13 +37,13 @@
       "modifier": "F",
       "a": {
         "mode": "$",
-        "value": 2
+        "value": 5
       },
       "b": {
         "mode": "@",
         "value": 2
       },
-      "raw": "MOV.F 2, @2"
+      "raw": "MOV.F 5, @2"
     },
     {
       "opcode": "JMP",
@@ -72,23 +73,24 @@
     }
   ],
   "start": 0,
-  "source": ";name g38g29g11sentineldw\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
+  "source": ";name g56g43g38g29g11sent\norg 0\nADD.F #0, 3\nADD.F #4, 3\nMOV.F 5, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
+  "generation": 5,
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
-    "losses": 3,
-    "ties": 2
-  },
-  "score": 11.18,
-  "displayName": "Neon Comet",
-  "benchmarkRecord": {
-    "wins": 2,
-    "losses": 3,
+    "wins": 4,
+    "losses": 1,
     "ties": 3
   },
-  "benchmarkScore": 9.18,
-  "genomeHash": "736d632a1e84ce4b",
-  "currentLeagueRank": 7,
+  "score": 15.18,
+  "benchmarkRecord": {
+    "wins": 2,
+    "losses": 2,
+    "ties": 4
+  },
+  "benchmarkScore": 10.18,
+  "displayName": "Static Needle",
+  "genomeHash": "99cfe985395caa87",
+  "currentLeagueRank": 4,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 5,
@@ -116,7 +118,7 @@
       {
         "at": 0,
         "opcode": "ADD",
-        "step": 4,
+        "step": 0,
         "targetMode": "$",
         "targetOffset": 3
       },
@@ -128,30 +130,30 @@
         "targetOffset": 3
       }
     ],
-    "genomeHash": "736d632a1e84ce4b",
-    "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "genomeHash": "99cfe985395caa87",
+    "normalizedGenome": "ADD.F #0,$3\nADD.F #4,$3\nMOV.F $5,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
     "facts": [
       "5 instructions",
       "contains a backward JMP forming a 2-instruction loop",
-      "ADD uses fixed immediate step 4",
+      "ADD uses fixed immediate step 0",
       "ADD uses fixed immediate step 4"
     ]
   },
   "status": "active",
-  "retentionReason": "retained as roster fill after evidence lanes",
+  "retentionReason": "retained as broad competitor",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 3,
-      "losses": 3,
-      "ties": 2
+      "wins": 4,
+      "losses": 1,
+      "ties": 3
     },
     "benchmarkRecord": {
       "wins": 2,
-      "losses": 3,
-      "ties": 3
+      "losses": 2,
+      "ties": 4
     },
-    "currentLeagueRank": 7,
-    "summary": "current league rank #7; current league record: 3W / 2D / 3L"
+    "currentLeagueRank": 4,
+    "summary": "current league record: 4W / 3D / 1L; benchmark record: 2W / 4D / 2L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
@@ -180,7 +182,7 @@
       {
         "at": 0,
         "opcode": "ADD",
-        "step": 4,
+        "step": 0,
         "targetMode": "$",
         "targetOffset": 3
       },
@@ -192,12 +194,12 @@
         "targetOffset": 3
       }
     ],
-    "genomeHash": "736d632a1e84ce4b",
-    "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "genomeHash": "99cfe985395caa87",
+    "normalizedGenome": "ADD.F #0,$3\nADD.F #4,$3\nMOV.F $5,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
     "facts": [
       "5 instructions",
       "contains a backward JMP forming a 2-instruction loop",
-      "ADD uses fixed immediate step 4",
+      "ADD uses fixed immediate step 0",
       "ADD uses fixed immediate step 4"
     ]
   }

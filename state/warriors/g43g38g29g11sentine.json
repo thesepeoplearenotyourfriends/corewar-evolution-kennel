@@ -75,9 +75,379 @@
   "source": ";name g43g38g29g11sentine\norg 0\nADD.F #0, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
+    "wins": 1,
     "losses": 4,
-    "ties": 1
+    "ties": 3
   },
-  "score": 10.18
+  "score": 6.18,
+  "benchmarkRecord": {
+    "wins": 1,
+    "losses": 2,
+    "ties": 5
+  },
+  "benchmarkScore": 8.18,
+  "genomeHash": "06066f9a2e02ed30",
+  "currentLeagueRank": 8,
+  "semantic": {
+    "schemaVersion": 1,
+    "instructionCount": 5,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1,
+      "DAT": 1
+    },
+    "addressingModeCounts": {
+      "#": 4,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 0,
+        "targetMode": "$",
+        "targetOffset": 3
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "06066f9a2e02ed30",
+    "normalizedGenome": "ADD.F #0,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "facts": [
+      "5 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 0",
+      "ADD uses fixed immediate step 4"
+    ]
+  },
+  "status": "active",
+  "retentionReason": "retained as champion counter",
+  "selectionEvidence": {
+    "against": {
+      "opponentId": "g511g49g210g14senti",
+      "opponentName": "Moss Engine",
+      "bouts": 8,
+      "record": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 1
+      },
+      "boutsDetail": [
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2923,
+          "eliminationCycle": 527,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            176
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-a-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2916,
+          "eliminationCycle": 507,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            169
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-a-1",
+          "order": "opponent-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": null,
+          "result": "tie",
+          "cycles": 8000,
+          "replayEventCount": 5413,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            1,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            2667
+          ],
+          "facts": [
+            "Neither side eliminated the other before cycle 8000.",
+            "Final processes: 1 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-b-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 1,
+          "result": "w1",
+          "cycles": 8000,
+          "replayEventCount": 2781,
+          "eliminationCycle": 256,
+          "finalProcessCounts": [
+            0,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            86,
+            2667
+          ],
+          "facts": [
+            "Warrior 1 won at cycle 8000.",
+            "Final processes: 0 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-b-1",
+          "order": "opponent-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2889,
+          "eliminationCycle": 425,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            142
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-c-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2946,
+          "eliminationCycle": 595,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            199
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-c-1",
+          "order": "opponent-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 1,
+          "result": "w1",
+          "cycles": 8000,
+          "replayEventCount": 2888,
+          "eliminationCycle": 570,
+          "finalProcessCounts": [
+            0,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            191,
+            2667
+          ],
+          "facts": [
+            "Warrior 1 won at cycle 8000.",
+            "Final processes: 0 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-d-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 1,
+          "result": "w1",
+          "cycles": 8000,
+          "replayEventCount": 2803,
+          "eliminationCycle": 318,
+          "finalProcessCounts": [
+            0,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            107,
+            2667
+          ],
+          "facts": [
+            "Warrior 1 won at cycle 8000.",
+            "Final processes: 0 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g43g38g29g11sentine-g511g49g210g14senti-d-1",
+          "order": "opponent-left"
+        }
+      ]
+    },
+    "overallRank": 8,
+    "summary": "vs Moss Engine: 4W / 1D / 3L across 8 balanced bouts; overall league rank #8"
+  },
+  "warriorFacts": {
+    "schemaVersion": 1,
+    "instructionCount": 5,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1,
+      "DAT": 1
+    },
+    "addressingModeCounts": {
+      "#": 4,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 0,
+        "targetMode": "$",
+        "targetOffset": 3
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "06066f9a2e02ed30",
+    "normalizedGenome": "ADD.F #0,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "facts": [
+      "5 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 0",
+      "ADD uses fixed immediate step 4"
+    ]
+  }
 }

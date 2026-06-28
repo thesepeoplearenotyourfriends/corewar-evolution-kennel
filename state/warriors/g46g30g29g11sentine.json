@@ -50,9 +50,111 @@
   "profileId": "kennel94",
   "record": {
     "wins": 4,
-    "losses": 1,
-    "ties": 3
+    "losses": 2,
+    "ties": 2
   },
-  "score": 15.15,
-  "displayName": "Tin Needle"
+  "score": 14.15,
+  "displayName": "Tin Needle",
+  "benchmarkRecord": {
+    "wins": 3,
+    "losses": 1,
+    "ties": 4
+  },
+  "benchmarkScore": 13.15,
+  "genomeHash": "7ce6c9725e0b5b6b",
+  "currentLeagueRank": 5,
+  "semantic": {
+    "schemaVersion": 1,
+    "instructionCount": 3,
+    "opcodeCounts": {
+      "ADD": 1,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 1,
+      "$": 4,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 2,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "7ce6c9725e0b5b6b",
+    "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\norg 0",
+    "facts": [
+      "3 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4"
+    ]
+  },
+  "status": "active",
+  "retentionReason": "retained as broad competitor",
+  "selectionEvidence": {
+    "currentLeagueRecord": {
+      "wins": 4,
+      "losses": 2,
+      "ties": 2
+    },
+    "benchmarkRecord": {
+      "wins": 3,
+      "losses": 1,
+      "ties": 4
+    },
+    "currentLeagueRank": 5,
+    "summary": "current league record: 4W / 2D / 2L; benchmark record: 3W / 4D / 1L"
+  },
+  "warriorFacts": {
+    "schemaVersion": 1,
+    "instructionCount": 3,
+    "opcodeCounts": {
+      "ADD": 1,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 1,
+      "$": 4,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 2,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "7ce6c9725e0b5b6b",
+    "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\norg 0",
+    "facts": [
+      "3 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4"
+    ]
+  }
 }
