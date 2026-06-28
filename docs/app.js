@@ -1,4 +1,5 @@
 import {runMatch} from './engine/corewar-vm.mjs';
+import {describeBout} from './engine/describe-bout.mjs';
 
 const DATA_MANIFEST_URL = 'data/manifest.json';
 const DATA_SNAPSHOT_URL = 'data/kennel.json';
@@ -121,7 +122,7 @@ function renderChain() {
     const card = document.createElement('div');
     card.className = 'card';
     const visibleWarriors = generationWarriors(generation);
-    card.innerHTML = `<b>Generation ${esc(String(generation.generation ?? '?'))}</b><br><span class="muted">${esc(generation.createdAt || 'seed shelf')}</span>`;
+    card.innerHTML = `<b>Generation ${esc(String(generation.generation ?? '?'))}</b><br><span class="muted">${esc(generation.createdAt || 'seed shelf')}</span>${generationRecord(generation)}`;
     if (!visibleWarriors.length) card.append(Object.assign(document.createElement('p'), {textContent: 'No descendants recorded yet.'}));
     for (const warrior of visibleWarriors) {
       const button = document.createElement('button');
@@ -137,7 +138,7 @@ function renderChain() {
 function show(id, requestedId = id) {
   selected = warriorById.get(id) ?? warriors[0];
   const unavailable = requestedId && requestedId !== selected.id && !warriorById.has(requestedId);
-  specimenEl.innerHTML = `${unavailable ? `<p class="notice">Previously selected specimen ${esc(requestedId)} is unavailable in this snapshot; showing ${esc(label(selected))}.</p>` : ''}<h3>${esc(label(selected))}</h3><p><b>Published read-only specimen</b></p><p>ID ${esc(selected.id)}; gen ${esc(String(selected.generation ?? 'sentinel'))}; parents ${esc((selected.parentIds || []).join(', ') || 'none')}; score ${esc(String(selected.score ?? 'n/a'))}; record ${esc(JSON.stringify(selected.record || {}))}; tags ${esc((selected.tags || []).join(', '))}</p><button type="button" id="copy-local">Edit local copy</button><pre>${esc((selected.source || '').slice(0, 1600))}</pre>`;
+  specimenEl.innerHTML = `${unavailable ? `<p class="notice">Previously selected specimen ${esc(requestedId)} is unavailable in this snapshot; showing ${esc(label(selected))}.</p>` : ''}<h3>${esc(label(selected))}</h3><p><b>Published read-only specimen</b></p><p>ID ${esc(selected.id)}; status ${esc(selected.status || (selected.protected ? 'fixed sentinel' : 'published specimen'))}; gen ${esc(String(selected.generation ?? 'sentinel'))}; parents ${esc((selected.parentIds || []).join(', ') || 'none')}; score ${esc(String(selected.score ?? 'n/a'))}; current league ${esc(recordText(selected.record))}; benchmark ${esc(recordText(selected.benchmarkRecord))}; genome ${esc(selected.genomeHash || selected.warriorFacts?.genomeHash || 'legacy')}</p>${retentionDetails(selected)}${careerDetails(selected)}<button type="button" id="copy-local">Edit local copy</button><pre>${esc((selected.source || '').slice(0, 1600))}</pre>`;
   document.getElementById('copy-local')?.addEventListener('click', () => loadLocalFrom(selected, true));
 }
 
@@ -223,15 +224,33 @@ function resultLine(bout) {
   return `TIE · ${cycleLimit()}-cycle limit`;
 }
 function whatHappened(bout) {
-  const lines = [esc(resultLine(bout))];
-  if (bout.winner === 0 || bout.winner === 1) lines.push(`${esc(bout.names[1 - bout.winner])} eliminated`);
-  else lines.push(`Reached configured cap at cycle ${cycleLimit()}`);
-  lines.push(`Ended at cycle ${esc(String(bout.cycles))}`);
-  lines.push(`Final processes: ${esc(String(bout.finalProcessCounts[0]))} — ${esc(String(bout.finalProcessCounts[1]))}`);
+  const desc = describeBout(bout);
+  const lines = [esc(resultLine(bout)), ...desc.facts.map(esc)];
+  lines.push(`Writes: ${esc(String(desc.writesBySide[0]))} — ${esc(String(desc.writesBySide[1]))}; births: ${esc(String(desc.processBirths[0]))} — ${esc(String(desc.processBirths[1]))}`);
   lines.push(`Replay: ${esc(String(frame))} / ${esc(String(bout.events.length))}`);
   lines.push(`<span class="muted">${esc(bout.mode)} · Seed ${esc(bout.seed)}</span>`);
   return lines.join('<br>');
 }
+
+function recordText(record) { return record ? `${record.wins || 0}W / ${record.ties || 0}D / ${record.losses || 0}L` : 'n/a'; }
+function retentionDetails(warrior) {
+  const reason = warrior.retentionReason || (warrior.protected ? 'status: fixed sentinel' : 'legacy specimen: no retention reason recorded');
+  const ev = warrior.selectionEvidence;
+  const facts = warrior.warriorFacts?.facts || warrior.semantic?.facts || [];
+  return `<details><summary>Why retained</summary><p>${esc(reason)}</p>${ev?.summary ? `<p>${esc(ev.summary)}</p>` : ''}<ul>${facts.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>`;
+}
+function careerDetails(warrior) {
+  const entries = (data.generations || []).flatMap(g => generationWarriors(g).filter(w => w.id === warrior.id).map(w => ({generation: g.generation, rank: (g.top || []).indexOf(w.id) + 1, reason: w.retentionReason || 'legacy generation', status: w.status || 'active'})));
+  if (!entries.length) return '';
+  return `<details><summary>Career</summary><ul>${entries.map(e => `<li>Gen ${esc(String(e.generation))} ${e.rank > 0 ? `#${e.rank}` : ''} · ${esc(e.status)} · ${esc(e.reason)}</li>`).join('')}</ul></details>`;
+}
+function generationRecord(generation) {
+  if (!generation.schemaVersion || !generation.selectionLedger) return '<br><span class="muted">Legacy generation: no selection ledger.</span>';
+  const selected = generation.selectionLedger.selected || [];
+  const retired = generation.selectionLedger.retired || [];
+  return `<details><summary>Generation record</summary><p>Parents: ${esc((generation.parentPool || []).join(', ') || 'none')}; candidates: ${esc(String(generation.candidateCount || 0))}</p><p>Current league: ${esc((generation.evaluation?.currentLeague || []).join(', '))}</p><p>Stable benchmark: ${esc((generation.evaluation?.stableBenchmark || []).join(', '))}</p><p>Retired: ${esc(retired.map(r => `${r.id} (${r.retirementReason})`).join('; ') || 'none')}</p><ul>${selected.map(w => `<li>${esc(label(w))}: ${esc(w.retentionReason || 'active')} · league ${esc(recordText(w.record))} · benchmark ${esc(recordText(w.benchmarkRecord))}</li>`).join('')}</ul></details>`;
+}
+
 function cycleLimit() { return data.profiles?.[profileId()]?.maxCycles ?? data.config?.maxCycles ?? 'configured'; }
 function invalidateMatch() { stopTimer(); drawEmptyArena('Selections changed · Run bout to create a new replay'); }
 

@@ -1,6 +1,6 @@
 {
   "revision": "4-2026-06-28T18:14:19.251Z",
-  "builtAt": "2026-06-28T18:14:19.260Z",
+  "builtAt": "2026-06-28T20:43:36.982Z",
   "status": "Dormant until the next manual breeding run.",
   "config": {
     "profileId": "kennel94",
@@ -9,7 +9,24 @@
     "matchesPerCandidate": 8,
     "hallOfFameSize": 12,
     "topNamed": 5,
-    "maxEpochsPerRun": 3
+    "maxEpochsPerRun": 3,
+    "retentionPolicy": {
+      "schemaVersion": 1,
+      "broadCompetitors": 5,
+      "counterSlots": 1,
+      "outlierSlots": 1,
+      "humanFavoredSlots": 1,
+      "nearDuplicateDistance": 0.18,
+      "counterBoutSeeds": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "counterMinWins": 3,
+      "outlierMinDistance": 0.45,
+      "outlierMinTiesOrWins": 1
+    }
   },
   "profiles": {
     "kennel94": {
