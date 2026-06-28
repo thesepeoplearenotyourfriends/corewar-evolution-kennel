@@ -22,6 +22,8 @@ const sourceAEl = document.getElementById('srcA');
 const sourceBEl = document.getElementById('srcB');
 const sourceATitle = document.getElementById('srcA-title');
 const sourceBTitle = document.getElementById('srcB-title');
+const sourceAKind = document.getElementById('srcA-kind');
+const sourceBKind = document.getElementById('srcB-kind');
 const editorEl = document.getElementById('editor');
 const reloadLocalButton = document.getElementById('reload-local');
 const matchStatusEl = document.getElementById('match-status');
@@ -41,6 +43,7 @@ let fossilExpanded = true;
 let fossilVisibleCount = FOSSIL_BATCH_SIZE;
 let localDirty = false;
 let localLoadedFromId = null;
+let matchStaleMessage = null;
 
 try {
   data = await loadSnapshot();
@@ -94,11 +97,15 @@ function updateStatus() {
 }
 
 function populateSelectors(preferredId) {
+  const previousLeft = warriorASelect.value || preferredId;
+  const previousRight = warriorBSelect.value;
+  warriors = sortedWarriors(warriors);
+  warriorById = new Map(warriors.map((warrior) => [warrior.id, warrior]));
   const options = warriors.map((warrior) => `<option value="${escAttr(warrior.id)}">${esc(label(warrior))}</option>`).join('');
   warriorASelect.innerHTML = options;
   warriorBSelect.innerHTML = options;
-  warriorASelect.value = warriorById.has(preferredId) ? preferredId : warriors[0].id;
-  warriorBSelect.value = warriors[1]?.id ?? warriors[0].id;
+  warriorASelect.value = warriorById.has(previousLeft) ? previousLeft : warriors[0].id;
+  warriorBSelect.value = warriorById.has(previousRight) ? previousRight : (warriors[1]?.id ?? warriors[0].id);
 }
 
 function renderChain() {
@@ -137,10 +144,14 @@ function show(id, requestedId = id) {
 function renderPublishedSources(activePcs = []) {
   const left = warriorById.get(warriorASelect.value) ?? warriors[0];
   const right = warriorById.get(warriorBSelect.value) ?? warriors[1] ?? warriors[0];
-  sourceATitle.textContent = label(left).toUpperCase();
-  sourceBTitle.textContent = label(right).toUpperCase();
+  const rightSource = currentRightSource();
+  const rightName = hasLocalChallenger() ? 'LOCAL CHALLENGER' : label(right).toUpperCase();
+  sourceATitle.textContent = `LEFT WARRIOR · ${label(left).toUpperCase()}`;
+  sourceBTitle.textContent = `RIGHT WARRIOR · ${rightName}`;
+  sourceAKind.textContent = 'published specimen';
+  sourceBKind.textContent = hasLocalChallenger() ? 'local challenger' : 'published specimen';
   sourceAEl.innerHTML = renderSource(left.source || '', activeLineFor(0, activePcs[0]));
-  sourceBEl.innerHTML = renderSource(right.source || '', activeLineFor(1, activePcs[1]));
+  sourceBEl.innerHTML = renderSource(rightSource || '', activeLineFor(1, activePcs[1]));
   updateMatchMode();
 }
 
@@ -148,7 +159,9 @@ function activeLineFor(index, pc) {
   if (!match || pc == null) return null;
   const source = index === 0 ? (warriorById.get(warriorASelect.value)?.source || '') : currentRightSource();
   const offset = modulo(pc - match.placements[index], coreSize());
-  return instructionLineMap(source)[offset] ?? null;
+  const map = instructionLineMap(source);
+  if (offset < 0 || offset >= map.length) return null;
+  return map[offset] ?? null;
 }
 
 function runBout() {
@@ -158,12 +171,15 @@ function runBout() {
   const useLocal = hasLocalChallenger();
   const rightSource = useLocal ? editorEl.value : warriorB.source;
   match = runMatch({profileId: profileId(), warriors: [{id: warriorA.id, source: warriorA.source}, {id: useLocal ? 'local-challenger' : warriorB.id, source: rightSource}], seed: seedEl.value});
+  match.names = [label(warriorA), useLocal ? 'Local challenger' : label(warriorB)];
+  match.mode = useLocal ? 'published left warrior vs local challenger' : 'published left warrior vs published right warrior';
+  matchStaleMessage = null;
   frame = 0;
   draw();
   updateMatchControls();
 }
 
-function drawEmptyArena() { match = null; frame = 0; draw(); }
+function drawEmptyArena(message = null) { match = null; matchStaleMessage = message; frame = 0; draw(); }
 
 function draw() {
   const size = coreSize();
@@ -195,11 +211,31 @@ function updateMatchControls() {
   playButton.disabled = !exists;
   stepButton.disabled = !exists;
   endButton.disabled = !exists;
-  matchStatusEl.textContent = exists ? `${match.result} · ${match.cycles} cycles` : 'no match';
-  matchInfoEl.innerHTML = exists ? `<b>${esc(label(warriorById.get(warriorASelect.value)))} vs ${esc(hasLocalChallenger() ? 'Local challenger' : label(warriorById.get(warriorBSelect.value)))}</b><br>Seed ${esc(match.seed)}<br>Result ${esc(match.result)} · ${esc(String(match.cycles))} cycles<br>Processes ${esc(match.finalProcessCounts.join(' / '))}<br>Replay ${esc(String(frame))} / ${esc(String(match.events.length))}` : 'Create a bout to inspect current match details.';
+  matchStatusEl.classList.toggle('left-win', exists && match.winner === 0);
+  matchStatusEl.classList.toggle('right-win', exists && match.winner === 1);
+  matchStatusEl.textContent = exists ? resultLine(match) : (matchStaleMessage || 'no match');
+  matchInfoEl.innerHTML = exists ? whatHappened(match) : esc(matchStaleMessage || 'Create a bout to inspect current match details.');
 }
 
-function updateMatchMode() { matchModeEl.textContent = hasLocalChallenger() ? `Run bout uses selected published left warrior vs Local challenger${localLoadedFromId ? ` copied from ${label(warriorById.get(localLoadedFromId) ?? {id: localLoadedFromId})}` : ''}.` : 'Run bout uses selected published warrior vs selected published warrior.'; }
+
+function resultLine(bout) {
+  if (bout.winner === 0 || bout.winner === 1) return `${bout.names[bout.winner].toUpperCase()} WINS · ${bout.cycles} cycles`;
+  return `TIE · ${cycleLimit()}-cycle limit`;
+}
+function whatHappened(bout) {
+  const lines = [esc(resultLine(bout))];
+  if (bout.winner === 0 || bout.winner === 1) lines.push(`${esc(bout.names[1 - bout.winner])} eliminated`);
+  else lines.push(`Reached configured cap at cycle ${cycleLimit()}`);
+  lines.push(`Ended at cycle ${esc(String(bout.cycles))}`);
+  lines.push(`Final processes: ${esc(String(bout.finalProcessCounts[0]))} — ${esc(String(bout.finalProcessCounts[1]))}`);
+  lines.push(`Replay: ${esc(String(frame))} / ${esc(String(bout.events.length))}`);
+  lines.push(`<span class="muted">${esc(bout.mode)} · Seed ${esc(bout.seed)}</span>`);
+  return lines.join('<br>');
+}
+function cycleLimit() { return data.profiles?.[profileId()]?.maxCycles ?? data.config?.maxCycles ?? 'configured'; }
+function invalidateMatch() { stopTimer(); drawEmptyArena('Selections changed · Run bout to create a new replay'); }
+
+function updateMatchMode() { matchModeEl.textContent = hasLocalChallenger() ? `Run bout uses published left warrior vs local challenger${localLoadedFromId ? ` copied from ${label(warriorById.get(localLoadedFromId) ?? {id: localLoadedFromId})}` : ''}.` : 'Run bout uses published left warrior vs published right warrior.'; }
 function hasLocalChallenger() { return localDirty && editorEl.value.trim().length > 0; }
 function currentRightSource() { return hasLocalChallenger() ? editorEl.value : (warriorById.get(warriorBSelect.value)?.source || ''); }
 function loadLocalFrom(warrior, dirty = true) { editorEl.value = warrior?.source || ''; localLoadedFromId = warrior?.id ?? null; localDirty = dirty; updateMatchMode(); }
@@ -209,7 +245,8 @@ function coreSize() { const profile = data.profiles?.[profileId()]; if (!profile
 function modulo(value, divisor) { return ((value % divisor) + divisor) % divisor; }
 function instructionLineMap(source) { const map = []; source.split('\n').forEach((line, index) => { const trimmed = line.trim(); if (trimmed && !trimmed.startsWith(';') && !trimmed.toUpperCase().startsWith('ORG ')) map.push(index); }); return map; }
 function renderSource(source, activeLine) { return source.split('\n').map((line, index) => `<span class="src-line${index === activeLine ? ' active' : ''}">${esc(line) || ' '}</span>`).join('\n'); }
-function collectWarriors(snapshot) { const byId = new Map(); const add = (warrior) => { if (warrior?.id && !byId.has(warrior.id)) byId.set(warrior.id, warrior); }; (snapshot.warriors || []).forEach(add); (snapshot.latest?.warriors || []).forEach(add); (snapshot.generations || []).flatMap((generation) => generation.warriors || []).forEach(add); return [...byId.values()].filter((warrior) => warrior.source); }
+function collectWarriors(snapshot) { const byId = new Map(); const add = (warrior) => { if (warrior?.id && !byId.has(warrior.id)) byId.set(warrior.id, warrior); }; (snapshot.warriors || []).forEach(add); (snapshot.latest?.warriors || []).forEach(add); (snapshot.generations || []).flatMap((generation) => generation.warriors || []).forEach(add); return sortedWarriors([...byId.values()].filter((warrior) => warrior.source)); }
+function sortedWarriors(list) { return [...list].sort((a, b) => label(a).localeCompare(label(b), undefined, {sensitivity: 'base'}) || String(a.name || '').localeCompare(String(b.name || ''), undefined, {sensitivity: 'base'}) || String(a.id).localeCompare(String(b.id))); }
 function generationWarriors(generation) { return (generation.warriors || generation.top || []).map((warrior) => typeof warrior === 'string' ? warriorById.get(warrior) : warrior).filter(Boolean); }
 function latestGeneration() { return data.generations.at(-1) ?? null; }
 function label(warrior) { return warrior?.displayName || warrior?.name || warrior?.id || 'unknown'; }
@@ -224,9 +261,9 @@ stepButton.addEventListener('click', () => { if (!match) return; frame = Math.mi
 endButton.addEventListener('click', () => { if (!match) return; frame = match.events.length; draw(); });
 playButton.addEventListener('click', () => { if (!match) return; if (timer) { stopTimer(); return; } timer = setInterval(() => { frame = Math.min(frame + 5, match.events.length); if (frame >= match.events.length) stopTimer(); draw(); }, 80); });
 exportButton.addEventListener('click', () => { const blob = new Blob([editorEl.value], {type: 'text/plain'}); const anchor = document.createElement('a'); anchor.href = URL.createObjectURL(blob); anchor.download = 'local-challenger.red'; anchor.click(); URL.revokeObjectURL(anchor.href); });
-warriorASelect.addEventListener('change', () => { show(warriorASelect.value); renderPublishedSources(); });
-warriorBSelect.addEventListener('change', () => { renderPublishedSources(); });
-editorEl.addEventListener('input', () => { localDirty = editorEl.value.trim().length > 0; updateMatchMode(); });
+warriorASelect.addEventListener('change', () => { show(warriorASelect.value); renderPublishedSources(); invalidateMatch(); });
+warriorBSelect.addEventListener('change', () => { renderPublishedSources(); invalidateMatch(); });
+editorEl.addEventListener('input', () => { localDirty = editorEl.value.trim().length > 0; renderPublishedSources(); invalidateMatch(); });
 reloadLocalButton.addEventListener('click', () => loadLocalFrom(warriorById.get(warriorBSelect.value) ?? warriors[1] ?? warriors[0], true));
 chainToggle.addEventListener('click', () => { fossilExpanded = !fossilExpanded; renderChain(); });
 chainMore.addEventListener('click', () => { fossilVisibleCount += FOSSIL_BATCH_SIZE; renderChain(); });
