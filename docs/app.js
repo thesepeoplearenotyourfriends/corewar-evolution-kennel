@@ -2,6 +2,7 @@ import {runMatch} from './engine/corewar-vm.mjs';
 
 const DATA_MANIFEST_URL = 'data/manifest.json';
 const DATA_SNAPSHOT_URL = 'data/kennel.json';
+const FOSSIL_BATCH_SIZE = 5;
 
 const statusEl = document.getElementById('status');
 const warriorASelect = document.getElementById('wA');
@@ -13,11 +14,19 @@ const stepButton = document.getElementById('step');
 const endButton = document.getElementById('end');
 const exportButton = document.getElementById('export');
 const chainEl = document.getElementById('chain');
+const chainToggle = document.getElementById('chain-toggle');
+const chainMore = document.getElementById('chain-more');
 const specimenEl = document.getElementById('specimen');
 const arenaEl = document.getElementById('arena');
-const logEl = document.getElementById('log');
 const sourceAEl = document.getElementById('srcA');
+const sourceBEl = document.getElementById('srcB');
+const sourceATitle = document.getElementById('srcA-title');
+const sourceBTitle = document.getElementById('srcB-title');
 const editorEl = document.getElementById('editor');
+const reloadLocalButton = document.getElementById('reload-local');
+const matchStatusEl = document.getElementById('match-status');
+const matchInfoEl = document.getElementById('match-info');
+const matchModeEl = document.getElementById('match-mode');
 const errorEl = document.getElementById('init-error') ?? createErrorPanel();
 
 let data;
@@ -28,6 +37,10 @@ let match = null;
 let frame = 0;
 let timer = null;
 let loadedDataUrl = DATA_SNAPSHOT_URL;
+let fossilExpanded = true;
+let fossilVisibleCount = FOSSIL_BATCH_SIZE;
+let localDirty = false;
+let localLoadedFromId = null;
 
 try {
   data = await loadSnapshot();
@@ -61,11 +74,7 @@ async function loadSnapshot() {
   return snapshot;
 }
 
-function withCacheBust(url, revision) {
-  const absolute = new URL(url, window.location.href);
-  absolute.searchParams.set('v', String(revision ?? Date.now()));
-  return absolute.href;
-}
+function withCacheBust(url, revision) { const absolute = new URL(url, window.location.href); absolute.searchParams.set('v', String(revision ?? Date.now())); return absolute.href; }
 
 function renderAll(previousSelectedId = selected?.id) {
   updateStatus();
@@ -73,15 +82,15 @@ function renderAll(previousSelectedId = selected?.id) {
   renderChain();
   const fallbackId = warriorASelect.value || warriors[0].id;
   show(warriorById.has(previousSelectedId) ? previousSelectedId : fallbackId, previousSelectedId);
-  runLocalSpar();
+  loadLocalFrom(warriorById.get(warriorBSelect.value) ?? warriors[1] ?? warriors[0], false);
+  renderPublishedSources();
+  drawEmptyArena();
+  updateMatchControls();
 }
 
 function updateStatus() {
   const latest = data.latest ?? latestGeneration();
-  const generation = latest?.generation ?? 0;
-  const epochTime = latest?.createdAt ?? data.builtAt ?? 'unknown time';
-  const dormantState = data.status ?? 'Status unavailable';
-  statusEl.textContent = `Latest generation ${generation}. ${dormantState} Latest epoch ${epochTime}. Snapshot ${data.revision ?? 'unversioned'}.`;
+  statusEl.textContent = `Latest generation ${latest?.generation ?? 0}. ${data.status ?? 'Status unavailable'} Latest epoch ${latest?.createdAt ?? data.builtAt ?? 'unknown time'}. Snapshot ${data.revision ?? 'unversioned'}.`;
 }
 
 function populateSelectors(preferredId) {
@@ -93,18 +102,20 @@ function populateSelectors(preferredId) {
 }
 
 function renderChain() {
+  const generations = data.generations.length ? [...data.generations] : [{generation: 0, createdAt: data.builtAt, warriors}];
+  const newestFirst = generations.sort((a, b) => Number(b.generation ?? 0) - Number(a.generation ?? 0));
+  chainToggle.textContent = fossilExpanded ? '▾' : '>';
+  chainToggle.setAttribute('aria-expanded', String(fossilExpanded));
+  chainEl.hidden = !fossilExpanded;
+  chainMore.hidden = !fossilExpanded || fossilVisibleCount >= newestFirst.length;
   chainEl.innerHTML = '';
-  const generations = data.generations.length ? data.generations : [{generation: 0, createdAt: data.builtAt, warriors}];
-  for (const generation of generations) {
+  if (!fossilExpanded) return;
+  for (const generation of newestFirst.slice(0, fossilVisibleCount)) {
     const card = document.createElement('div');
     card.className = 'card';
     const visibleWarriors = generationWarriors(generation);
-    card.innerHTML = `<b>Generation ${esc(String(generation.generation ?? '?'))}</b><br>${esc(generation.createdAt || 'seed shelf')}`;
-    if (!visibleWarriors.length) {
-      const empty = document.createElement('p');
-      empty.textContent = 'No descendants recorded yet.';
-      card.append(empty);
-    }
+    card.innerHTML = `<b>Generation ${esc(String(generation.generation ?? '?'))}</b><br><span class="muted">${esc(generation.createdAt || 'seed shelf')}</span>`;
+    if (!visibleWarriors.length) card.append(Object.assign(document.createElement('p'), {textContent: 'No descendants recorded yet.'}));
     for (const warrior of visibleWarriors) {
       const button = document.createElement('button');
       button.className = warrior.displayName ? 'champ' : '';
@@ -119,53 +130,103 @@ function renderChain() {
 function show(id, requestedId = id) {
   selected = warriorById.get(id) ?? warriors[0];
   const unavailable = requestedId && requestedId !== selected.id && !warriorById.has(requestedId);
-  specimenEl.innerHTML = `${unavailable ? `<p class="notice">Previously selected specimen ${esc(requestedId)} is unavailable in this snapshot; showing ${esc(label(selected))}.</p>` : ''}<h3>${esc(label(selected))}</h3><p><b>ARCHIVED WARRIOR</b></p><p>ID ${esc(selected.id)}; gen ${esc(String(selected.generation ?? 'sentinel'))}; parents ${esc((selected.parentIds || []).join(', ') || 'none')}; score ${esc(String(selected.score ?? 'n/a'))}; record ${esc(JSON.stringify(selected.record || {}))}; tags ${esc((selected.tags || []).join(', '))}</p><button type="button" id="copy-local">Edit local copy</button><pre>${esc((selected.source || '').slice(0, 1600))}</pre>`;
-  document.getElementById('copy-local')?.addEventListener('click', () => { editorEl.value = selected.source || ''; });
-  sourceAEl.textContent = selected.source || '';
-  if (!editorEl.value.trim()) editorEl.value = selected.source || '';
+  specimenEl.innerHTML = `${unavailable ? `<p class="notice">Previously selected specimen ${esc(requestedId)} is unavailable in this snapshot; showing ${esc(label(selected))}.</p>` : ''}<h3>${esc(label(selected))}</h3><p><b>Published read-only specimen</b></p><p>ID ${esc(selected.id)}; gen ${esc(String(selected.generation ?? 'sentinel'))}; parents ${esc((selected.parentIds || []).join(', ') || 'none')}; score ${esc(String(selected.score ?? 'n/a'))}; record ${esc(JSON.stringify(selected.record || {}))}; tags ${esc((selected.tags || []).join(', '))}</p><button type="button" id="copy-local">Edit local copy</button><pre>${esc((selected.source || '').slice(0, 1600))}</pre>`;
+  document.getElementById('copy-local')?.addEventListener('click', () => loadLocalFrom(selected, true));
 }
 
-function runLocalSpar() {
-  const warriorA = warriorById.get(warriorASelect.value) ?? warriors[0];
-  const fallbackB = warriorById.get(warriorBSelect.value) ?? warriors[1] ?? warriors[0];
-  const challengerSource = editorEl.value.trim() ? editorEl.value : fallbackB.source;
-  match = runMatch({profileId: data.config?.profileId ?? data.latest?.profileId ?? 'kennel94', warriors: [{id: warriorA.id, source: warriorA.source}, {id: 'local-challenger', source: challengerSource}], seed: seedEl.value});
-  frame = 0;
-  logEl.textContent = `LOCAL SPAR\n${match.result} in ${match.cycles} cycles\nBrowser-only. Not submitted, not ranked, not retained.`;
-  draw();
+function renderPublishedSources(activePcs = []) {
+  const left = warriorById.get(warriorASelect.value) ?? warriors[0];
+  const right = warriorById.get(warriorBSelect.value) ?? warriors[1] ?? warriors[0];
+  sourceATitle.textContent = label(left).toUpperCase();
+  sourceBTitle.textContent = label(right).toUpperCase();
+  sourceAEl.innerHTML = renderSource(left.source || '', activeLineFor(0, activePcs[0]));
+  sourceBEl.innerHTML = renderSource(right.source || '', activeLineFor(1, activePcs[1]));
+  updateMatchMode();
 }
+
+function activeLineFor(index, pc) {
+  if (!match || pc == null) return null;
+  const source = index === 0 ? (warriorById.get(warriorASelect.value)?.source || '') : currentRightSource();
+  const offset = modulo(pc - match.placements[index], coreSize());
+  return instructionLineMap(source)[offset] ?? null;
+}
+
+function runBout() {
+  stopTimer();
+  const warriorA = warriorById.get(warriorASelect.value) ?? warriors[0];
+  const warriorB = warriorById.get(warriorBSelect.value) ?? warriors[1] ?? warriors[0];
+  const useLocal = hasLocalChallenger();
+  const rightSource = useLocal ? editorEl.value : warriorB.source;
+  match = runMatch({profileId: profileId(), warriors: [{id: warriorA.id, source: warriorA.source}, {id: useLocal ? 'local-challenger' : warriorB.id, source: rightSource}], seed: seedEl.value});
+  frame = 0;
+  draw();
+  updateMatchControls();
+}
+
+function drawEmptyArena() { match = null; frame = 0; draw(); }
 
 function draw() {
-  const profile = data.profiles?.[data.config?.profileId ?? data.latest?.profileId ?? 'kennel94'];
-  if (!profile) throw new Error('Snapshot does not include the selected VM profile.');
-  arenaEl.innerHTML = Array.from({length: profile.coreSize}, (_, i) => `<div class="cell" id="c${i}"></div>`).join('');
-  for (const event of (match ? match.events.slice(0, frame) : [])) {
-    for (const write of event.write || []) document.getElementById(`c${write.at}`)?.classList.add(`o${write.owner}`);
-    document.getElementById(`c${event.pc}`)?.classList.add(`ip${event.warrior}`);
+  const size = coreSize();
+  const cellsPerTile = Math.ceil(size / 16);
+  const activeEvent = match?.events[Math.max(0, frame - 1)];
+  const classByCell = new Map();
+  if (match) {
+    match.placements.forEach((at, owner) => classByCell.set(at, `${classByCell.get(at) || ''} o${owner}`));
+    for (const event of match.events.slice(0, frame)) {
+      for (const write of event.write || []) classByCell.set(write.at, `${classByCell.get(write.at) || ''} o${write.owner}`);
+    }
+    if (activeEvent) classByCell.set(activeEvent.pc, `${classByCell.get(activeEvent.pc) || ''} ip${activeEvent.warrior}`);
   }
+  arenaEl.innerHTML = Array.from({length: 16}, (_, tile) => {
+    const start = tile * cellsPerTile;
+    const end = Math.min(start + cellsPerTile, size);
+    const cells = Array.from({length: end - start}, (_, offset) => {
+      const index = start + offset;
+      return `<span class="cell${classByCell.get(index) || ''}" title="cell ${index}"></span>`;
+    }).join('');
+    return `<section class="tile" aria-label="tile ${tile}, cells ${start}-${end - 1}"><span class="tile-label">${tile}</span><div class="tile-cells">${cells}</div></section>`;
+  }).join('');
+  renderPublishedSources(activeEvent ? [activeEvent.warrior === 0 ? activeEvent.pc : null, activeEvent.warrior === 1 ? activeEvent.pc : null] : []);
+  updateMatchControls();
 }
 
-function collectWarriors(snapshot) {
-  const byId = new Map();
-  const add = (warrior) => { if (warrior?.id && !byId.has(warrior.id)) byId.set(warrior.id, warrior); };
-  (snapshot.warriors || []).forEach(add);
-  (snapshot.latest?.warriors || []).forEach(add);
-  (snapshot.generations || []).flatMap((generation) => generation.warriors || []).forEach(add);
-  return [...byId.values()].filter((warrior) => warrior.source);
+function updateMatchControls() {
+  const exists = Boolean(match);
+  playButton.disabled = !exists;
+  stepButton.disabled = !exists;
+  endButton.disabled = !exists;
+  matchStatusEl.textContent = exists ? `${match.result} · ${match.cycles} cycles` : 'no match';
+  matchInfoEl.innerHTML = exists ? `<b>${esc(label(warriorById.get(warriorASelect.value)))} vs ${esc(hasLocalChallenger() ? 'Local challenger' : label(warriorById.get(warriorBSelect.value)))}</b><br>Seed ${esc(match.seed)}<br>Result ${esc(match.result)} · ${esc(String(match.cycles))} cycles<br>Processes ${esc(match.finalProcessCounts.join(' / '))}<br>Replay ${esc(String(frame))} / ${esc(String(match.events.length))}` : 'Create a bout to inspect current match details.';
 }
+
+function updateMatchMode() { matchModeEl.textContent = hasLocalChallenger() ? `Run bout uses selected published left warrior vs Local challenger${localLoadedFromId ? ` copied from ${label(warriorById.get(localLoadedFromId) ?? {id: localLoadedFromId})}` : ''}.` : 'Run bout uses selected published warrior vs selected published warrior.'; }
+function hasLocalChallenger() { return localDirty && editorEl.value.trim().length > 0; }
+function currentRightSource() { return hasLocalChallenger() ? editorEl.value : (warriorById.get(warriorBSelect.value)?.source || ''); }
+function loadLocalFrom(warrior, dirty = true) { editorEl.value = warrior?.source || ''; localLoadedFromId = warrior?.id ?? null; localDirty = dirty; updateMatchMode(); }
+function stopTimer() { if (timer) clearInterval(timer); timer = null; }
+function profileId() { return data.config?.profileId ?? data.latest?.profileId ?? 'kennel94'; }
+function coreSize() { const profile = data.profiles?.[profileId()]; if (!profile) throw new Error('Snapshot does not include the selected VM profile.'); return profile.coreSize; }
+function modulo(value, divisor) { return ((value % divisor) + divisor) % divisor; }
+function instructionLineMap(source) { const map = []; source.split('\n').forEach((line, index) => { const trimmed = line.trim(); if (trimmed && !trimmed.startsWith(';') && !trimmed.toUpperCase().startsWith('ORG ')) map.push(index); }); return map; }
+function renderSource(source, activeLine) { return source.split('\n').map((line, index) => `<span class="src-line${index === activeLine ? ' active' : ''}">${esc(line) || ' '}</span>`).join('\n'); }
+function collectWarriors(snapshot) { const byId = new Map(); const add = (warrior) => { if (warrior?.id && !byId.has(warrior.id)) byId.set(warrior.id, warrior); }; (snapshot.warriors || []).forEach(add); (snapshot.latest?.warriors || []).forEach(add); (snapshot.generations || []).flatMap((generation) => generation.warriors || []).forEach(add); return [...byId.values()].filter((warrior) => warrior.source); }
 function generationWarriors(generation) { return (generation.warriors || generation.top || []).map((warrior) => typeof warrior === 'string' ? warriorById.get(warrior) : warrior).filter(Boolean); }
 function latestGeneration() { return data.generations.at(-1) ?? null; }
-function label(warrior) { return warrior.displayName || warrior.name || warrior.id; }
+function label(warrior) { return warrior?.displayName || warrior?.name || warrior?.id || 'unknown'; }
 function esc(value) { return String(value).replace(/[&<>]/g, (char) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;'}[char])); }
 function escAttr(value) { return esc(value).replace(/"/g, '&quot;'); }
 function createErrorPanel() { const panel = document.createElement('section'); panel.id = 'init-error'; panel.className = 'error-panel'; panel.hidden = true; document.querySelector('main')?.prepend(panel); return panel; }
 function hideInitError() { errorEl.hidden = true; errorEl.textContent = ''; }
 function showInitError(title, error, attemptedUrl) { statusEl.textContent = 'Unable to initialize Core War Evolution Kennel.'; errorEl.hidden = false; errorEl.innerHTML = `<h2>${esc(title)}</h2><p>Attempted data URL: <code>${esc(attemptedUrl)}</code></p><pre>${esc(error?.stack || error?.message || error)}</pre>`; }
 
-runButton.addEventListener('click', runLocalSpar);
-stepButton.addEventListener('click', () => { if (!match) runLocalSpar(); frame = Math.min(frame + 1, match.events.length); draw(); });
-endButton.addEventListener('click', () => { if (!match) runLocalSpar(); frame = match.events.length; draw(); });
-playButton.addEventListener('click', () => { if (timer) { clearInterval(timer); timer = null; return; } if (!match) runLocalSpar(); timer = setInterval(() => { frame += 5; if (frame >= match.events.length) { frame = match.events.length; clearInterval(timer); timer = null; } draw(); }, 80); });
+runButton.addEventListener('click', runBout);
+stepButton.addEventListener('click', () => { if (!match) return; frame = Math.min(frame + 1, match.events.length); draw(); });
+endButton.addEventListener('click', () => { if (!match) return; frame = match.events.length; draw(); });
+playButton.addEventListener('click', () => { if (!match) return; if (timer) { stopTimer(); return; } timer = setInterval(() => { frame = Math.min(frame + 5, match.events.length); if (frame >= match.events.length) stopTimer(); draw(); }, 80); });
 exportButton.addEventListener('click', () => { const blob = new Blob([editorEl.value], {type: 'text/plain'}); const anchor = document.createElement('a'); anchor.href = URL.createObjectURL(blob); anchor.download = 'local-challenger.red'; anchor.click(); URL.revokeObjectURL(anchor.href); });
-warriorASelect.addEventListener('change', () => show(warriorASelect.value));
-warriorBSelect.addEventListener('change', () => { if (!editorEl.value.trim()) editorEl.value = warriorById.get(warriorBSelect.value)?.source || ''; });
+warriorASelect.addEventListener('change', () => { show(warriorASelect.value); renderPublishedSources(); });
+warriorBSelect.addEventListener('change', () => { renderPublishedSources(); });
+editorEl.addEventListener('input', () => { localDirty = editorEl.value.trim().length > 0; updateMatchMode(); });
+reloadLocalButton.addEventListener('click', () => loadLocalFrom(warriorById.get(warriorBSelect.value) ?? warriors[1] ?? warriors[0], true));
+chainToggle.addEventListener('click', () => { fossilExpanded = !fossilExpanded; renderChain(); });
+chainMore.addEventListener('click', () => { fossilVisibleCount += FOSSIL_BATCH_SIZE; renderChain(); });
