@@ -75,10 +75,10 @@
   "source": ";name g38g29g11sentineldw\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 4,
-    "losses": 2,
-    "ties": 2
+    "wins": 3,
+    "losses": 4,
+    "ties": 1
   },
-  "score": 14.18,
+  "score": 10.18,
   "displayName": "Neon Comet"
 }

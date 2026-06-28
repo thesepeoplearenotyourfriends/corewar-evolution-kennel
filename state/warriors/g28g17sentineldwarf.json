@@ -49,10 +49,10 @@
   "source": ";name g28g17sentineldwarf\norg 0\nADD.F #4, 3\nMOV.F -3, @2\nJMP.F -2, 0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
+    "wins": 4,
     "losses": 0,
-    "ties": 5
+    "ties": 4
   },
-  "score": 14.14,
+  "score": 16.14,
   "displayName": "Static Finch"
 }

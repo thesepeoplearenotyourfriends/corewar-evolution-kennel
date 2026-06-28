@@ -1,23 +1,10 @@
 {
-  "id": "g210g14sentineldwar",
-  "name": "g210g14sentineldwar",
+  "id": "g46g30g29g11sentine",
+  "name": "g46g30g29g11sentine",
   "parentIds": [
-    "g14sentineldwarf"
+    "g30g29g11sentineldw"
   ],
   "instructions": [
-    {
-      "opcode": "ADD",
-      "modifier": "F",
-      "a": {
-        "mode": "#",
-        "value": 4
-      },
-      "b": {
-        "mode": "$",
-        "value": 3
-      },
-      "raw": "ADD.F #4, 3"
-    },
     {
       "opcode": "ADD",
       "modifier": "F",
@@ -53,19 +40,19 @@
       },
       "b": {
         "mode": "$",
-        "value": 0
+        "value": -5
       },
-      "raw": "JMP.F -2, 0"
+      "raw": "JMP.F -2, -5"
     }
   ],
   "start": 0,
-  "source": ";name g210g14sentineldwar\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "source": ";name g46g30g29g11sentine\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nend\n",
   "profileId": "kennel94",
   "record": {
     "wins": 4,
-    "losses": 4,
-    "ties": 0
+    "losses": 1,
+    "ties": 3
   },
-  "score": 12.14,
-  "displayName": "Impossible Engine"
+  "score": 15.15,
+  "displayName": "Tin Needle"
 }

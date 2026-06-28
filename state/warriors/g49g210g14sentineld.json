@@ -1,8 +1,8 @@
 {
-  "id": "g210g14sentineldwar",
-  "name": "g210g14sentineldwar",
+  "id": "g49g210g14sentineld",
+  "name": "g49g210g14sentineld",
   "parentIds": [
-    "g14sentineldwarf"
+    "g210g14sentineldwar"
   ],
   "instructions": [
     {
@@ -14,9 +14,9 @@
       },
       "b": {
         "mode": "$",
-        "value": 3
+        "value": 8
       },
-      "raw": "ADD.F #4, 3"
+      "raw": "ADD.F #4, 8"
     },
     {
       "opcode": "ADD",
@@ -59,13 +59,13 @@
     }
   ],
   "start": 0,
-  "source": ";name g210g14sentineldwar\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "source": ";name g49g210g14sentineld\norg 0\nADD.F #4, 8\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
   "profileId": "kennel94",
   "record": {
     "wins": 4,
-    "losses": 4,
-    "ties": 0
+    "losses": 3,
+    "ties": 1
   },
-  "score": 12.14,
-  "displayName": "Impossible Engine"
+  "score": 13.15,
+  "displayName": "Tin Oracle"
 }

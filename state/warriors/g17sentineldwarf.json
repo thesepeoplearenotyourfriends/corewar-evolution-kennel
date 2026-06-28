@@ -49,10 +49,10 @@
   "source": ";name g17sentineldwarf\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 7,
-    "losses": 0,
+    "wins": 5,
+    "losses": 2,
     "ties": 1
   },
-  "score": 22.14,
+  "score": 16.14,
   "displayName": "Neon Dagger"
 }

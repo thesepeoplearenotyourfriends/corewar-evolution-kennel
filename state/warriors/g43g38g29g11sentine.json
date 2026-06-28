@@ -1,8 +1,8 @@
 {
-  "id": "g210g14sentineldwar",
-  "name": "g210g14sentineldwar",
+  "id": "g43g38g29g11sentine",
+  "name": "g43g38g29g11sentine",
   "parentIds": [
-    "g14sentineldwarf"
+    "g38g29g11sentineldw"
   ],
   "instructions": [
     {
@@ -10,13 +10,13 @@
       "modifier": "F",
       "a": {
         "mode": "#",
-        "value": 4
+        "value": 0
       },
       "b": {
         "mode": "$",
         "value": 3
       },
-      "raw": "ADD.F #4, 3"
+      "raw": "ADD.F #0, 3"
     },
     {
       "opcode": "ADD",
@@ -53,19 +53,31 @@
       },
       "b": {
         "mode": "$",
+        "value": -5
+      },
+      "raw": "JMP.F -2, -5"
+    },
+    {
+      "opcode": "DAT",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
         "value": 0
       },
-      "raw": "JMP.F -2, 0"
+      "b": {
+        "mode": "#",
+        "value": 0
+      },
+      "raw": "DAT.F #0, #0"
     }
   ],
   "start": 0,
-  "source": ";name g210g14sentineldwar\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "source": ";name g43g38g29g11sentine\norg 0\nADD.F #0, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 4,
+    "wins": 3,
     "losses": 4,
-    "ties": 0
+    "ties": 1
   },
-  "score": 12.14,
-  "displayName": "Impossible Engine"
+  "score": 10.18
 }
