@@ -1,1 +1,1 @@
-export const KENNEL={profileId:'kennel94',populationSize:8,offspringPerEpoch:12,matchesPerCandidate:8,hallOfFameSize:12,topNamed:5,maxEpochsPerRun:3};
+export const KENNEL={profileId:'kennel94',populationSize:8,offspringPerEpoch:12,matchesPerCandidate:8,hallOfFameSize:12,topNamed:5,maxEpochsPerRun:3,retentionPolicy:{schemaVersion:1,broadCompetitors:5,counterSlots:1,outlierSlots:1,humanFavoredSlots:1,nearDuplicateDistance:0.18,counterBoutSeeds:['a','b','c','d'],counterMinWins:3,outlierMinDistance:0.45,outlierMinTiesOrWins:1}};
