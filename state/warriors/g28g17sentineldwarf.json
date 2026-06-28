@@ -1,0 +1,58 @@
+{
+  "id": "g28g17sentineldwarf",
+  "name": "g28g17sentineldwarf",
+  "parentIds": [
+    "g17sentineldwarf"
+  ],
+  "instructions": [
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #4, 3"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -3
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F -3, @2"
+    },
+    {
+      "opcode": "JMP",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -2
+      },
+      "b": {
+        "mode": "$",
+        "value": 0
+      },
+      "raw": "JMP.F -2, 0"
+    }
+  ],
+  "start": 0,
+  "source": ";name g28g17sentineldwarf\norg 0\nADD.F #4, 3\nMOV.F -3, @2\nJMP.F -2, 0\nend\n",
+  "profileId": "kennel94",
+  "record": {
+    "wins": 1,
+    "losses": 0,
+    "ties": 7
+  },
+  "score": 10.14,
+  "displayName": "Static Finch"
+}

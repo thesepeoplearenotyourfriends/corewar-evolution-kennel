@@ -1,0 +1,44 @@
+{
+  "id": "g10sentinelimp",
+  "name": "g10sentinelimp",
+  "parentIds": [
+    "sentinel-imp"
+  ],
+  "instructions": [
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 0
+      },
+      "b": {
+        "mode": "$",
+        "value": 1
+      },
+      "raw": "MOV.F 0, 1"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 0
+      },
+      "b": {
+        "mode": "$",
+        "value": 1
+      },
+      "raw": "MOV.F 0, 1"
+    }
+  ],
+  "start": 0,
+  "source": ";name g10sentinelimp\norg 0\nMOV.F 0, 1\nMOV.F 0, 1\nend\n",
+  "profileId": "kennel94",
+  "record": {
+    "wins": 0,
+    "losses": 0,
+    "ties": 6
+  },
+  "score": 6.09
+}

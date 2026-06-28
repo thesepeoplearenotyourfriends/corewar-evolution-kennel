@@ -1,0 +1,57 @@
+{
+  "id": "g18sentinelspl",
+  "name": "g18sentinelspl",
+  "parentIds": [
+    "sentinel-spl"
+  ],
+  "instructions": [
+    {
+      "opcode": "SPL",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 0
+      },
+      "b": {
+        "mode": "$",
+        "value": 0
+      },
+      "raw": "SPL.F 0, 0"
+    },
+    {
+      "opcode": "SPL",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 0
+      },
+      "b": {
+        "mode": "$",
+        "value": 0
+      },
+      "raw": "SPL.F 0, 0"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 0
+      },
+      "b": {
+        "mode": "$",
+        "value": 1
+      },
+      "raw": "MOV.F 0, 1"
+    }
+  ],
+  "start": 0,
+  "source": ";name g18sentinelspl\norg 0\nSPL.F 0, 0\nSPL.F 0, 0\nMOV.F 0, 1\nend\n",
+  "profileId": "kennel94",
+  "record": {
+    "wins": 0,
+    "losses": 0,
+    "ties": 6
+  },
+  "score": 6.1
+}
