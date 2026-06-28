@@ -1,0 +1,71 @@
+{
+  "id": "g11sentineldwarf",
+  "name": "g11sentineldwarf",
+  "parentIds": [
+    "sentinel-dwarf"
+  ],
+  "instructions": [
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #4, 3"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 2
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F 2, @2"
+    },
+    {
+      "opcode": "JMP",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -2
+      },
+      "b": {
+        "mode": "$",
+        "value": -2
+      },
+      "raw": "JMP.F -2, -2"
+    },
+    {
+      "opcode": "DAT",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 0
+      },
+      "b": {
+        "mode": "#",
+        "value": 0
+      },
+      "raw": "DAT.F #0, #0"
+    }
+  ],
+  "start": 0,
+  "source": ";name g11sentineldwarf\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -2\nDAT.F #0, #0\nend\n",
+  "profileId": "kennel94",
+  "record": {
+    "wins": 1,
+    "losses": 1,
+    "ties": 6
+  },
+  "score": 9.18,
+  "displayName": "Ghost Marmot"
+}

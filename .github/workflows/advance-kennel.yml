@@ -1,0 +1,27 @@
+name: Advance Kennel
+on:
+  workflow_dispatch:
+    inputs:
+      epochs:
+        description: Number of bounded epochs to run
+        required: false
+        default: "1"
+permissions:
+  contents: write
+jobs:
+  advance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: node test/regression.mjs
+      - run: node kennel/evolve.mjs "${{ inputs.epochs }}"
+      - name: Commit epoch
+        run: |
+          if git diff --quiet; then echo "No new epoch changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add engine kennel state docs test README.md .github/workflows/advance-kennel.yml
+          git commit -m "Advance kennel epoch"
+          git push
