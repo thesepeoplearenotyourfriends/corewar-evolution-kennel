@@ -49,10 +49,10 @@
   "source": ";name g14sentineldwarf\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 2,
-    "losses": 2,
+    "wins": 4,
+    "losses": 0,
     "ties": 4
   },
-  "score": 10.14,
+  "score": 16.14,
   "displayName": "Sump Mite"
 }

@@ -1,10 +1,23 @@
 {
-  "id": "g17sentineldwarf",
-  "name": "g17sentineldwarf",
+  "id": "g311g17sentineldwar",
+  "name": "g311g17sentineldwar",
   "parentIds": [
-    "sentinel-dwarf"
+    "g17sentineldwarf"
   ],
   "instructions": [
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 2
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F 2, @2"
+    },
     {
       "opcode": "ADD",
       "modifier": "F",
@@ -46,13 +59,12 @@
     }
   ],
   "start": 0,
-  "source": ";name g17sentineldwarf\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "source": ";name g311g17sentineldwar\norg 0\nMOV.F 2, @2\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 7,
-    "losses": 0,
-    "ties": 1
+    "wins": 2,
+    "losses": 1,
+    "ties": 5
   },
-  "score": 22.14,
-  "displayName": "Neon Dagger"
+  "score": 11.14
 }

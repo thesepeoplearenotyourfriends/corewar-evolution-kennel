@@ -1,13 +1,13 @@
 {
-  "generation": 2,
+  "generation": 3,
   "warriors": [
-    "g29g11sentineldwarf",
-    "g210g14sentineldwar",
-    "g28g17sentineldwarf",
     "g17sentineldwarf",
+    "g210g14sentineldwar",
     "g14sentineldwarf",
-    "g11sentineldwarf",
-    "g22g14sentineldwarf",
-    "g23g15sentinelspl"
+    "g38g29g11sentineldw",
+    "g28g17sentineldwarf",
+    "g29g11sentineldwarf",
+    "g30g29g11sentineldw",
+    "g311g17sentineldwar"
   ]
 }

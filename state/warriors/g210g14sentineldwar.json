@@ -62,10 +62,10 @@
   "source": ";name g210g14sentineldwar\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
-    "losses": 1,
-    "ties": 4
+    "wins": 5,
+    "losses": 2,
+    "ties": 1
   },
-  "score": 13.14,
+  "score": 16.14,
   "displayName": "Impossible Engine"
 }

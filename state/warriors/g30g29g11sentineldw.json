@@ -1,8 +1,8 @@
 {
-  "id": "g17sentineldwarf",
-  "name": "g17sentineldwarf",
+  "id": "g30g29g11sentineldw",
+  "name": "g30g29g11sentineldw",
   "parentIds": [
-    "sentinel-dwarf"
+    "g29g11sentineldwarf"
   ],
   "instructions": [
     {
@@ -40,19 +40,18 @@
       },
       "b": {
         "mode": "$",
-        "value": 0
+        "value": -5
       },
-      "raw": "JMP.F -2, 0"
+      "raw": "JMP.F -2, -5"
     }
   ],
   "start": 0,
-  "source": ";name g17sentineldwarf\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "source": ";name g30g29g11sentineldw\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 7,
-    "losses": 0,
-    "ties": 1
+    "wins": 4,
+    "losses": 4,
+    "ties": 0
   },
-  "score": 22.14,
-  "displayName": "Neon Dagger"
+  "score": 12.15
 }
