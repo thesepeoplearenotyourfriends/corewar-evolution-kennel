@@ -1,5 +1,4 @@
 import {runMatch} from './engine/corewar-vm.mjs';
-import {describeBout} from './engine/describe-bout.mjs';
 
 const DATA_MANIFEST_URL = 'data/manifest.json';
 const DATA_SNAPSHOT_URL = 'data/kennel.json';
@@ -224,12 +223,33 @@ function resultLine(bout) {
   return `TIE · ${cycleLimit()}-cycle limit`;
 }
 function whatHappened(bout) {
-  const desc = describeBout(bout);
+  const desc = summarizeBout(bout);
   const lines = [esc(resultLine(bout)), ...desc.facts.map(esc)];
   lines.push(`Writes: ${esc(String(desc.writesBySide[0]))} — ${esc(String(desc.writesBySide[1]))}; births: ${esc(String(desc.processBirths[0]))} — ${esc(String(desc.processBirths[1]))}`);
   lines.push(`Replay: ${esc(String(frame))} / ${esc(String(bout.events.length))}`);
   lines.push(`<span class="muted">${esc(bout.mode)} · Seed ${esc(bout.seed)}</span>`);
   return lines.join('<br>');
+}
+
+
+function summarizeBout(bout) {
+  const peak = [0, 0], births = [0, 0], writes = [0, 0];
+  for (const ev of bout.events || []) {
+    const q = ev.queues || [];
+    for (let i = 0; i < 2; i++) peak[i] = Math.max(peak[i], (q[i] || 0) + (ev.warrior === i ? 1 : 0));
+    if (ev.spawn !== null && ev.spawn !== undefined) births[ev.warrior]++;
+    for (const write of ev.write || []) writes[write.owner]++;
+  }
+  for (let i = 0; i < 2; i++) peak[i] = Math.max(peak[i], bout.finalProcessCounts?.[i] || 0);
+  return {
+    writesBySide: writes,
+    processBirths: births,
+    facts: [
+      bout.winner === null ? `Neither side eliminated the other before cycle ${bout.cycles}.` : `Warrior ${bout.winner} won at cycle ${bout.cycles}.`,
+      `Final processes: ${bout.finalProcessCounts?.[0] ?? 0} and ${bout.finalProcessCounts?.[1] ?? 0}.`,
+      `Peak processes: ${peak[0]} and ${peak[1]}.`
+    ]
+  };
 }
 
 function recordText(record) { return record ? `${record.wins || 0}W / ${record.ties || 0}D / ${record.losses || 0}L` : 'n/a'; }

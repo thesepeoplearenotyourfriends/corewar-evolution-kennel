@@ -1,6 +1,6 @@
 {
   "revision": "4-2026-06-28T18:14:19.251Z",
-  "builtAt": "2026-06-28T20:43:36.982Z",
+  "builtAt": "2026-06-28T20:59:20.300Z",
   "status": "Dormant until the next manual breeding run.",
   "config": {
     "profileId": "kennel94",
@@ -137,7 +137,47 @@
             "ties": 3
           },
           "score": 12.14,
-          "displayName": "Neon Dagger"
+          "displayName": "Neon Dagger",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g11sentineldwarf",
@@ -208,7 +248,48 @@
             "ties": 6
           },
           "score": 6.18,
-          "displayName": "Ghost Marmot"
+          "displayName": "Ghost Marmot",
+          "genomeHash": "fd8db8ebfb336124",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1,
+              "DAT": 1
+            },
+            "addressingModeCounts": {
+              "#": 3,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "fd8db8ebfb336124",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-2\nDAT.F #0,#0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g14sentineldwarf",
@@ -266,7 +347,47 @@
             "ties": 6
           },
           "score": 6.14,
-          "displayName": "Sump Mite"
+          "displayName": "Sump Mite",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g15sentinelspl",
@@ -311,7 +432,28 @@
             "ties": 6
           },
           "score": 6.11,
-          "displayName": "Pale Marmot"
+          "displayName": "Pale Marmot",
+          "genomeHash": "81bc859e6aeda877",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 2,
+            "opcodeCounts": {
+              "SPL": 1,
+              "MOV": 1
+            },
+            "addressingModeCounts": {
+              "$": 4
+            },
+            "hasSpl": true,
+            "backwardBranches": [],
+            "fixedArithmeticPointerSteps": [],
+            "genomeHash": "81bc859e6aeda877",
+            "normalizedGenome": "SPL.F $0,$0\nMOV.F $-5,$1\norg 0",
+            "facts": [
+              "2 instructions",
+              "contains 1 process-spawning instruction"
+            ]
+          }
         },
         {
           "id": "sentinel-spl",
@@ -357,7 +499,28 @@
             "ties": 6
           },
           "score": 6.11,
-          "displayName": "Noisy Dagger"
+          "displayName": "Noisy Dagger",
+          "genomeHash": "0cfdd8e5e2d78680",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 2,
+            "opcodeCounts": {
+              "SPL": 1,
+              "MOV": 1
+            },
+            "addressingModeCounts": {
+              "$": 4
+            },
+            "hasSpl": true,
+            "backwardBranches": [],
+            "fixedArithmeticPointerSteps": [],
+            "genomeHash": "0cfdd8e5e2d78680",
+            "normalizedGenome": "SPL.F $0,$0\nMOV.F $0,$1\norg 0",
+            "facts": [
+              "2 instructions",
+              "contains 1 process-spawning instruction"
+            ]
+          }
         },
         {
           "id": "g18sentinelspl",
@@ -414,7 +577,28 @@
             "losses": 0,
             "ties": 6
           },
-          "score": 6.1
+          "score": 6.1,
+          "genomeHash": "e3ac5dfd5138a8cd",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "SPL": 2,
+              "MOV": 1
+            },
+            "addressingModeCounts": {
+              "$": 6
+            },
+            "hasSpl": true,
+            "backwardBranches": [],
+            "fixedArithmeticPointerSteps": [],
+            "genomeHash": "e3ac5dfd5138a8cd",
+            "normalizedGenome": "SPL.F $0,$0\nSPL.F $0,$0\nMOV.F $0,$1\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains 2 process-spawning instructions"
+            ]
+          }
         },
         {
           "id": "sentinel-imp",
@@ -447,7 +631,26 @@
             "losses": 0,
             "ties": 6
           },
-          "score": 6.1
+          "score": 6.1,
+          "genomeHash": "8e6973988f40afe6",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 1,
+            "opcodeCounts": {
+              "MOV": 1
+            },
+            "addressingModeCounts": {
+              "$": 2
+            },
+            "hasSpl": false,
+            "backwardBranches": [],
+            "fixedArithmeticPointerSteps": [],
+            "genomeHash": "8e6973988f40afe6",
+            "normalizedGenome": "MOV.F $0,$1\norg 0",
+            "facts": [
+              "1 instruction"
+            ]
+          }
         },
         {
           "id": "g10sentinelimp",
@@ -491,7 +694,26 @@
             "losses": 0,
             "ties": 6
           },
-          "score": 6.09
+          "score": 6.09,
+          "genomeHash": "b67ffd5ae00f314f",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 2,
+            "opcodeCounts": {
+              "MOV": 2
+            },
+            "addressingModeCounts": {
+              "$": 4
+            },
+            "hasSpl": false,
+            "backwardBranches": [],
+            "fixedArithmeticPointerSteps": [],
+            "genomeHash": "b67ffd5ae00f314f",
+            "normalizedGenome": "MOV.F $0,$1\nMOV.F $0,$1\norg 0",
+            "facts": [
+              "2 instructions"
+            ]
+          }
         }
       ],
       "replays": [
@@ -4044,7 +4266,36 @@
           "warriors": [
             "g17sentineldwarf",
             "sentinel-imp"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": null,
+            "result": "tie",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              75,
+              111
+            ],
+            "facts": [
+              "Neither side eliminated the other before cycle 8000.",
+              "Final processes: 1 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -7595,7 +7846,36 @@
           "warriors": [
             "g11sentineldwarf",
             "sentinel-imp"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": null,
+            "result": "tie",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              75,
+              111
+            ],
+            "facts": [
+              "Neither side eliminated the other before cycle 8000.",
+              "Final processes: 1 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -11146,7 +11426,36 @@
           "warriors": [
             "g14sentineldwarf",
             "sentinel-imp"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": null,
+            "result": "tie",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              75,
+              111
+            ],
+            "facts": [
+              "Neither side eliminated the other before cycle 8000.",
+              "Final processes: 1 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -14432,7 +14741,36 @@
           "warriors": [
             "g15sentinelspl",
             "sentinel-imp"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": null,
+            "result": "tie",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              5,
+              1
+            ],
+            "peakProcessCounts": [
+              5,
+              1
+            ],
+            "processBirths": [
+              35,
+              0
+            ],
+            "writesBySide": [
+              33,
+              100
+            ],
+            "facts": [
+              "Neither side eliminated the other before cycle 8000.",
+              "Final processes: 5 and 1.",
+              "Peak processes: 5 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -17983,7 +18321,36 @@
           "warriors": [
             "sentinel-spl",
             "sentinel-imp"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": null,
+            "result": "tie",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              34,
+              1
+            ],
+            "peakProcessCounts": [
+              34,
+              1
+            ],
+            "processBirths": [
+              14,
+              0
+            ],
+            "writesBySide": [
+              86,
+              100
+            ],
+            "facts": [
+              "Neither side eliminated the other before cycle 8000.",
+              "Final processes: 34 and 1.",
+              "Peak processes: 34 and 1."
+            ]
+          }
         }
       ]
     },
@@ -18071,7 +18438,48 @@
             "ties": 5
           },
           "score": 14.18,
-          "displayName": "Static Cricket"
+          "displayName": "Static Cricket",
+          "genomeHash": "b73afa7fb42dff92",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1,
+              "DAT": 1
+            },
+            "addressingModeCounts": {
+              "#": 3,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "b73afa7fb42dff92",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g210g14sentineldwar",
@@ -18142,7 +18550,55 @@
             "ties": 4
           },
           "score": 13.14,
-          "displayName": "Impossible Engine"
+          "displayName": "Impossible Engine",
+          "genomeHash": "937d0f7675052e7b",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 2,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 2,
+              "$": 5,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              },
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "937d0f7675052e7b",
+            "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g28g17sentineldwarf",
@@ -18200,7 +18656,47 @@
             "ties": 7
           },
           "score": 10.14,
-          "displayName": "Static Finch"
+          "displayName": "Static Finch",
+          "genomeHash": "f398341a5b7c3708",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "f398341a5b7c3708",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $-3,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g17sentineldwarf",
@@ -18258,7 +18754,47 @@
             "ties": 4
           },
           "score": 10.14,
-          "displayName": "Neon Dagger"
+          "displayName": "Neon Dagger",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g14sentineldwarf",
@@ -18316,7 +18852,47 @@
             "ties": 4
           },
           "score": 10.14,
-          "displayName": "Sump Mite"
+          "displayName": "Sump Mite",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g11sentineldwarf",
@@ -18387,7 +18963,48 @@
             "ties": 6
           },
           "score": 9.18,
-          "displayName": "Ghost Marmot"
+          "displayName": "Ghost Marmot",
+          "genomeHash": "fd8db8ebfb336124",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1,
+              "DAT": 1
+            },
+            "addressingModeCounts": {
+              "#": 3,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "fd8db8ebfb336124",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-2\nDAT.F #0,#0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g22g14sentineldwarf",
@@ -18457,7 +19074,54 @@
             "losses": 2,
             "ties": 5
           },
-          "score": 8.14
+          "score": 8.14,
+          "genomeHash": "2874b514064a761c",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 2
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 6,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              },
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "2874b514064a761c",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g23g15sentinelspl",
@@ -18501,7 +19165,28 @@
             "losses": 0,
             "ties": 8
           },
-          "score": 8.11
+          "score": 8.11,
+          "genomeHash": "2496af8665fa6d8d",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 2,
+            "opcodeCounts": {
+              "SPL": 1,
+              "MOV": 1
+            },
+            "addressingModeCounts": {
+              "$": 4
+            },
+            "hasSpl": true,
+            "backwardBranches": [],
+            "fixedArithmeticPointerSteps": [],
+            "genomeHash": "2496af8665fa6d8d",
+            "normalizedGenome": "SPL.F $0,$0\nMOV.F $-6,$1\norg 0",
+            "facts": [
+              "2 instructions",
+              "contains 1 process-spawning instruction"
+            ]
+          }
         }
       ],
       "replays": [
@@ -21984,7 +22669,36 @@
           "warriors": [
             "g29g11sentineldwarf",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -25465,7 +26179,36 @@
           "warriors": [
             "g210g14sentineldwar",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": 215,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              100,
+              72
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -28946,7 +29689,36 @@
           "warriors": [
             "g28g17sentineldwarf",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": null,
+            "result": "tie",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Neither side eliminated the other before cycle 8000.",
+              "Final processes: 1 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -32427,7 +33199,36 @@
           "warriors": [
             "g17sentineldwarf",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 1,
+            "result": "w1",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              0,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 1 won at cycle 8000.",
+              "Final processes: 0 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -35908,7 +36709,36 @@
           "warriors": [
             "g14sentineldwarf",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 1,
+            "result": "w1",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              0,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 1 won at cycle 8000.",
+              "Final processes: 0 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         }
       ]
     },
@@ -35983,7 +36813,47 @@
             "ties": 1
           },
           "score": 22.14,
-          "displayName": "Neon Dagger"
+          "displayName": "Neon Dagger",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g210g14sentineldwar",
@@ -36054,7 +36924,55 @@
             "ties": 1
           },
           "score": 16.14,
-          "displayName": "Impossible Engine"
+          "displayName": "Impossible Engine",
+          "genomeHash": "937d0f7675052e7b",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 2,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 2,
+              "$": 5,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              },
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "937d0f7675052e7b",
+            "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g14sentineldwarf",
@@ -36112,7 +37030,47 @@
             "ties": 4
           },
           "score": 16.14,
-          "displayName": "Sump Mite"
+          "displayName": "Sump Mite",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g38g29g11sentineldw",
@@ -36196,7 +37154,56 @@
             "ties": 2
           },
           "score": 14.18,
-          "displayName": "Neon Comet"
+          "displayName": "Neon Comet",
+          "genomeHash": "736d632a1e84ce4b",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 5,
+            "opcodeCounts": {
+              "ADD": 2,
+              "MOV": 1,
+              "JMP": 1,
+              "DAT": 1
+            },
+            "addressingModeCounts": {
+              "#": 4,
+              "$": 5,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              },
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "736d632a1e84ce4b",
+            "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+            "facts": [
+              "5 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g28g17sentineldwarf",
@@ -36254,7 +37261,47 @@
             "ties": 5
           },
           "score": 14.14,
-          "displayName": "Static Finch"
+          "displayName": "Static Finch",
+          "genomeHash": "f398341a5b7c3708",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "f398341a5b7c3708",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $-3,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g29g11sentineldwarf",
@@ -36325,7 +37372,48 @@
             "ties": 4
           },
           "score": 13.18,
-          "displayName": "Static Cricket"
+          "displayName": "Static Cricket",
+          "genomeHash": "b73afa7fb42dff92",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1,
+              "DAT": 1
+            },
+            "addressingModeCounts": {
+              "#": 3,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "b73afa7fb42dff92",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g30g29g11sentineldw",
@@ -36382,7 +37470,47 @@
             "losses": 4,
             "ties": 0
           },
-          "score": 12.15
+          "score": 12.15,
+          "genomeHash": "7ce6c9725e0b5b6b",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "7ce6c9725e0b5b6b",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g311g17sentineldwar",
@@ -36452,7 +37580,47 @@
             "losses": 1,
             "ties": 5
           },
-          "score": 11.14
+          "score": 11.14,
+          "genomeHash": "b2d0f2d68c3d7dff",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "MOV": 2,
+              "ADD": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "$": 5,
+              "@": 2,
+              "#": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "b2d0f2d68c3d7dff",
+            "normalizedGenome": "MOV.F $2,@2\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         }
       ],
       "replays": [
@@ -39935,7 +41103,36 @@
           "warriors": [
             "g17sentineldwarf",
             "g29g11sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -43421,7 +44618,36 @@
           "warriors": [
             "g210g14sentineldwar",
             "g29g11sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 1,
+            "result": "w1",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              0,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              87,
+              86
+            ],
+            "facts": [
+              "Warrior 1 won at cycle 8000.",
+              "Final processes: 0 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -46902,7 +48128,36 @@
           "warriors": [
             "g14sentineldwarf",
             "g29g11sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -50388,7 +51643,36 @@
           "warriors": [
             "g38g29g11sentineldw",
             "g29g11sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              87,
+              86
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -53864,7 +55148,36 @@
           "warriors": [
             "g28g17sentineldwarf",
             "g29g11sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": 151,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              121,
+              50
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         }
       ]
     },
@@ -53939,7 +55252,47 @@
             "ties": 1
           },
           "score": 16.14,
-          "displayName": "Neon Dagger"
+          "displayName": "Neon Dagger",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g28g17sentineldwarf",
@@ -53997,7 +55350,47 @@
             "ties": 4
           },
           "score": 16.14,
-          "displayName": "Static Finch"
+          "displayName": "Static Finch",
+          "genomeHash": "f398341a5b7c3708",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "f398341a5b7c3708",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $-3,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g46g30g29g11sentine",
@@ -54055,7 +55448,47 @@
             "ties": 3
           },
           "score": 15.15,
-          "displayName": "Tin Needle"
+          "displayName": "Tin Needle",
+          "genomeHash": "7ce6c9725e0b5b6b",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "7ce6c9725e0b5b6b",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g49g210g14sentineld",
@@ -54126,7 +55559,55 @@
             "ties": 1
           },
           "score": 13.15,
-          "displayName": "Tin Oracle"
+          "displayName": "Tin Oracle",
+          "genomeHash": "696dd80f1e2c6217",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 2,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 2,
+              "$": 5,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 8
+              },
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "696dd80f1e2c6217",
+            "normalizedGenome": "ADD.F #4,$8\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g14sentineldwarf",
@@ -54184,7 +55665,47 @@
             "ties": 1
           },
           "score": 13.14,
-          "displayName": "Sump Mite"
+          "displayName": "Sump Mite",
+          "genomeHash": "36a5a71e6f767dcf",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 3,
+            "opcodeCounts": {
+              "ADD": 1,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 1,
+              "$": 4,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 2,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "36a5a71e6f767dcf",
+            "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "3 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g210g14sentineldwar",
@@ -54255,7 +55776,55 @@
             "ties": 0
           },
           "score": 12.14,
-          "displayName": "Impossible Engine"
+          "displayName": "Impossible Engine",
+          "genomeHash": "937d0f7675052e7b",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 4,
+            "opcodeCounts": {
+              "ADD": 2,
+              "MOV": 1,
+              "JMP": 1
+            },
+            "addressingModeCounts": {
+              "#": 2,
+              "$": 5,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              },
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "937d0f7675052e7b",
+            "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+            "facts": [
+              "4 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g43g38g29g11sentine",
@@ -54338,7 +55907,56 @@
             "losses": 4,
             "ties": 1
           },
-          "score": 10.18
+          "score": 10.18,
+          "genomeHash": "06066f9a2e02ed30",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 5,
+            "opcodeCounts": {
+              "ADD": 2,
+              "MOV": 1,
+              "JMP": 1,
+              "DAT": 1
+            },
+            "addressingModeCounts": {
+              "#": 4,
+              "$": 5,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 0,
+                "targetMode": "$",
+                "targetOffset": 3
+              },
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "06066f9a2e02ed30",
+            "normalizedGenome": "ADD.F #0,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+            "facts": [
+              "5 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 0",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         },
         {
           "id": "g38g29g11sentineldw",
@@ -54422,7 +56040,56 @@
             "ties": 1
           },
           "score": 10.18,
-          "displayName": "Neon Comet"
+          "displayName": "Neon Comet",
+          "genomeHash": "736d632a1e84ce4b",
+          "warriorFacts": {
+            "schemaVersion": 1,
+            "instructionCount": 5,
+            "opcodeCounts": {
+              "ADD": 2,
+              "MOV": 1,
+              "JMP": 1,
+              "DAT": 1
+            },
+            "addressingModeCounts": {
+              "#": 4,
+              "$": 5,
+              "@": 1
+            },
+            "hasSpl": false,
+            "backwardBranches": [
+              {
+                "at": 3,
+                "opcode": "JMP",
+                "offset": -2,
+                "loopLength": 2
+              }
+            ],
+            "fixedArithmeticPointerSteps": [
+              {
+                "at": 0,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              },
+              {
+                "at": 1,
+                "opcode": "ADD",
+                "step": 4,
+                "targetMode": "$",
+                "targetOffset": 3
+              }
+            ],
+            "genomeHash": "736d632a1e84ce4b",
+            "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+            "facts": [
+              "5 instructions",
+              "contains a backward JMP forming a 2-instruction loop",
+              "ADD uses fixed immediate step 4",
+              "ADD uses fixed immediate step 4"
+            ]
+          }
         }
       ],
       "replays": [
@@ -57905,7 +59572,36 @@
           "warriors": [
             "g17sentineldwarf",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 1,
+            "result": "w1",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              0,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 1 won at cycle 8000.",
+              "Final processes: 0 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -61386,7 +63082,36 @@
           "warriors": [
             "g28g17sentineldwarf",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": null,
+            "result": "tie",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Neither side eliminated the other before cycle 8000.",
+              "Final processes: 1 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -64867,7 +66592,36 @@
           "warriors": [
             "g46g30g29g11sentine",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -68353,7 +70107,36 @@
           "warriors": [
             "g49g210g14sentineld",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 0,
+            "result": "w0",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              1,
+              0
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              87,
+              86
+            ],
+            "facts": [
+              "Warrior 0 won at cycle 8000.",
+              "Final processes: 1 and 0.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         },
         {
           "profileId": "kennel94",
@@ -71834,7 +73617,36 @@
           "warriors": [
             "g14sentineldwarf",
             "g17sentineldwarf"
-          ]
+          ],
+          "description": {
+            "schemaVersion": 1,
+            "winner": 1,
+            "result": "w1",
+            "cycles": 8000,
+            "replayEventCount": 200,
+            "eliminationCycle": null,
+            "finalProcessCounts": [
+              0,
+              1
+            ],
+            "peakProcessCounts": [
+              1,
+              1
+            ],
+            "processBirths": [
+              0,
+              0
+            ],
+            "writesBySide": [
+              86,
+              86
+            ],
+            "facts": [
+              "Warrior 1 won at cycle 8000.",
+              "Final processes: 0 and 1.",
+              "Peak processes: 1 and 1."
+            ]
+          }
         }
       ]
     }
@@ -71910,7 +73722,47 @@
           "ties": 1
         },
         "score": 16.14,
-        "displayName": "Neon Dagger"
+        "displayName": "Neon Dagger",
+        "genomeHash": "36a5a71e6f767dcf",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 3,
+          "opcodeCounts": {
+            "ADD": 1,
+            "MOV": 1,
+            "JMP": 1
+          },
+          "addressingModeCounts": {
+            "#": 1,
+            "$": 4,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 2,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "36a5a71e6f767dcf",
+          "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+          "facts": [
+            "3 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       },
       {
         "id": "g28g17sentineldwarf",
@@ -71968,7 +73820,47 @@
           "ties": 4
         },
         "score": 16.14,
-        "displayName": "Static Finch"
+        "displayName": "Static Finch",
+        "genomeHash": "f398341a5b7c3708",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 3,
+          "opcodeCounts": {
+            "ADD": 1,
+            "MOV": 1,
+            "JMP": 1
+          },
+          "addressingModeCounts": {
+            "#": 1,
+            "$": 4,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 2,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "f398341a5b7c3708",
+          "normalizedGenome": "ADD.F #4,$3\nMOV.F $-3,@2\nJMP.F $-2,$0\norg 0",
+          "facts": [
+            "3 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       },
       {
         "id": "g46g30g29g11sentine",
@@ -72026,7 +73918,47 @@
           "ties": 3
         },
         "score": 15.15,
-        "displayName": "Tin Needle"
+        "displayName": "Tin Needle",
+        "genomeHash": "7ce6c9725e0b5b6b",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 3,
+          "opcodeCounts": {
+            "ADD": 1,
+            "MOV": 1,
+            "JMP": 1
+          },
+          "addressingModeCounts": {
+            "#": 1,
+            "$": 4,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 2,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "7ce6c9725e0b5b6b",
+          "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\norg 0",
+          "facts": [
+            "3 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       },
       {
         "id": "g49g210g14sentineld",
@@ -72097,7 +74029,55 @@
           "ties": 1
         },
         "score": 13.15,
-        "displayName": "Tin Oracle"
+        "displayName": "Tin Oracle",
+        "genomeHash": "696dd80f1e2c6217",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 4,
+          "opcodeCounts": {
+            "ADD": 2,
+            "MOV": 1,
+            "JMP": 1
+          },
+          "addressingModeCounts": {
+            "#": 2,
+            "$": 5,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 3,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 8
+            },
+            {
+              "at": 1,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "696dd80f1e2c6217",
+          "normalizedGenome": "ADD.F #4,$8\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+          "facts": [
+            "4 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 4",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       },
       {
         "id": "g14sentineldwarf",
@@ -72155,7 +74135,47 @@
           "ties": 1
         },
         "score": 13.14,
-        "displayName": "Sump Mite"
+        "displayName": "Sump Mite",
+        "genomeHash": "36a5a71e6f767dcf",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 3,
+          "opcodeCounts": {
+            "ADD": 1,
+            "MOV": 1,
+            "JMP": 1
+          },
+          "addressingModeCounts": {
+            "#": 1,
+            "$": 4,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 2,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "36a5a71e6f767dcf",
+          "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+          "facts": [
+            "3 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       },
       {
         "id": "g210g14sentineldwar",
@@ -72226,7 +74246,55 @@
           "ties": 0
         },
         "score": 12.14,
-        "displayName": "Impossible Engine"
+        "displayName": "Impossible Engine",
+        "genomeHash": "937d0f7675052e7b",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 4,
+          "opcodeCounts": {
+            "ADD": 2,
+            "MOV": 1,
+            "JMP": 1
+          },
+          "addressingModeCounts": {
+            "#": 2,
+            "$": 5,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 3,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            },
+            {
+              "at": 1,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "937d0f7675052e7b",
+          "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+          "facts": [
+            "4 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 4",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       },
       {
         "id": "g43g38g29g11sentine",
@@ -72309,7 +74377,56 @@
           "losses": 4,
           "ties": 1
         },
-        "score": 10.18
+        "score": 10.18,
+        "genomeHash": "06066f9a2e02ed30",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 5,
+          "opcodeCounts": {
+            "ADD": 2,
+            "MOV": 1,
+            "JMP": 1,
+            "DAT": 1
+          },
+          "addressingModeCounts": {
+            "#": 4,
+            "$": 5,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 3,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 0,
+              "targetMode": "$",
+              "targetOffset": 3
+            },
+            {
+              "at": 1,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "06066f9a2e02ed30",
+          "normalizedGenome": "ADD.F #0,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+          "facts": [
+            "5 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 0",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       },
       {
         "id": "g38g29g11sentineldw",
@@ -72393,7 +74510,56 @@
           "ties": 1
         },
         "score": 10.18,
-        "displayName": "Neon Comet"
+        "displayName": "Neon Comet",
+        "genomeHash": "736d632a1e84ce4b",
+        "warriorFacts": {
+          "schemaVersion": 1,
+          "instructionCount": 5,
+          "opcodeCounts": {
+            "ADD": 2,
+            "MOV": 1,
+            "JMP": 1,
+            "DAT": 1
+          },
+          "addressingModeCounts": {
+            "#": 4,
+            "$": 5,
+            "@": 1
+          },
+          "hasSpl": false,
+          "backwardBranches": [
+            {
+              "at": 3,
+              "opcode": "JMP",
+              "offset": -2,
+              "loopLength": 2
+            }
+          ],
+          "fixedArithmeticPointerSteps": [
+            {
+              "at": 0,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            },
+            {
+              "at": 1,
+              "opcode": "ADD",
+              "step": 4,
+              "targetMode": "$",
+              "targetOffset": 3
+            }
+          ],
+          "genomeHash": "736d632a1e84ce4b",
+          "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+          "facts": [
+            "5 instructions",
+            "contains a backward JMP forming a 2-instruction loop",
+            "ADD uses fixed immediate step 4",
+            "ADD uses fixed immediate step 4"
+          ]
+        }
       }
     ],
     "replays": [
@@ -75876,7 +78042,36 @@
         "warriors": [
           "g17sentineldwarf",
           "g17sentineldwarf"
-        ]
+        ],
+        "description": {
+          "schemaVersion": 1,
+          "winner": 1,
+          "result": "w1",
+          "cycles": 8000,
+          "replayEventCount": 200,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            0,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            86,
+            86
+          ],
+          "facts": [
+            "Warrior 1 won at cycle 8000.",
+            "Final processes: 0 and 1.",
+            "Peak processes: 1 and 1."
+          ]
+        }
       },
       {
         "profileId": "kennel94",
@@ -79357,7 +81552,36 @@
         "warriors": [
           "g28g17sentineldwarf",
           "g17sentineldwarf"
-        ]
+        ],
+        "description": {
+          "schemaVersion": 1,
+          "winner": null,
+          "result": "tie",
+          "cycles": 8000,
+          "replayEventCount": 200,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            1,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            86,
+            86
+          ],
+          "facts": [
+            "Neither side eliminated the other before cycle 8000.",
+            "Final processes: 1 and 1.",
+            "Peak processes: 1 and 1."
+          ]
+        }
       },
       {
         "profileId": "kennel94",
@@ -82838,7 +85062,36 @@
         "warriors": [
           "g46g30g29g11sentine",
           "g17sentineldwarf"
-        ]
+        ],
+        "description": {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 200,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            86,
+            86
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ]
+        }
       },
       {
         "profileId": "kennel94",
@@ -86324,7 +88577,36 @@
         "warriors": [
           "g49g210g14sentineld",
           "g17sentineldwarf"
-        ]
+        ],
+        "description": {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 200,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            87,
+            86
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ]
+        }
       },
       {
         "profileId": "kennel94",
@@ -89805,7 +92087,36 @@
         "warriors": [
           "g14sentineldwarf",
           "g17sentineldwarf"
-        ]
+        ],
+        "description": {
+          "schemaVersion": 1,
+          "winner": 1,
+          "result": "w1",
+          "cycles": 8000,
+          "replayEventCount": 200,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            0,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            86,
+            86
+          ],
+          "facts": [
+            "Warrior 1 won at cycle 8000.",
+            "Final processes: 0 and 1.",
+            "Peak processes: 1 and 1."
+          ]
+        }
       }
     ]
   },
@@ -89818,7 +92129,26 @@
         "survivor"
       ],
       "protected": true,
-      "source": ";name Patient Imp\norg 0\nMOV.F 0, 1\nend\n"
+      "source": ";name Patient Imp\norg 0\nMOV.F 0, 1\nend\n",
+      "genomeHash": "8e6973988f40afe6",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 1,
+        "opcodeCounts": {
+          "MOV": 1
+        },
+        "addressingModeCounts": {
+          "$": 2
+        },
+        "hasSpl": false,
+        "backwardBranches": [],
+        "fixedArithmeticPointerSteps": [],
+        "genomeHash": "8e6973988f40afe6",
+        "normalizedGenome": "MOV.F $0,$1\norg 0",
+        "facts": [
+          "1 instruction"
+        ]
+      }
     },
     {
       "id": "sentinel-dwarf",
@@ -89827,7 +92157,48 @@
         "bomber"
       ],
       "protected": true,
-      "source": ";name Tin Dwarf\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nDAT.F #0, #0\nend\n"
+      "source": ";name Tin Dwarf\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nDAT.F #0, #0\nend\n",
+      "genomeHash": "6983b7c4aaa1bf48",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 4,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1,
+          "DAT": 1
+        },
+        "addressingModeCounts": {
+          "#": 3,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "6983b7c4aaa1bf48",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\nDAT.F #0,#0\norg 0",
+        "facts": [
+          "4 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "sentinel-spl",
@@ -89836,7 +92207,28 @@
         "splitter"
       ],
       "protected": true,
-      "source": ";name Fork Moss\norg 0\nSPL.F 0, 0\nMOV.F 0, 1\nend\n"
+      "source": ";name Fork Moss\norg 0\nSPL.F 0, 0\nMOV.F 0, 1\nend\n",
+      "genomeHash": "0cfdd8e5e2d78680",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 2,
+        "opcodeCounts": {
+          "SPL": 1,
+          "MOV": 1
+        },
+        "addressingModeCounts": {
+          "$": 4
+        },
+        "hasSpl": true,
+        "backwardBranches": [],
+        "fixedArithmeticPointerSteps": [],
+        "genomeHash": "0cfdd8e5e2d78680",
+        "normalizedGenome": "SPL.F $0,$0\nMOV.F $0,$1\norg 0",
+        "facts": [
+          "2 instructions",
+          "contains 1 process-spawning instruction"
+        ]
+      }
     },
     {
       "id": "g10sentinelimp",
@@ -89880,7 +92272,26 @@
         "losses": 0,
         "ties": 6
       },
-      "score": 6.09
+      "score": 6.09,
+      "genomeHash": "b67ffd5ae00f314f",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 2,
+        "opcodeCounts": {
+          "MOV": 2
+        },
+        "addressingModeCounts": {
+          "$": 4
+        },
+        "hasSpl": false,
+        "backwardBranches": [],
+        "fixedArithmeticPointerSteps": [],
+        "genomeHash": "b67ffd5ae00f314f",
+        "normalizedGenome": "MOV.F $0,$1\nMOV.F $0,$1\norg 0",
+        "facts": [
+          "2 instructions"
+        ]
+      }
     },
     {
       "id": "g11sentineldwarf",
@@ -89951,7 +92362,48 @@
         "ties": 6
       },
       "score": 9.18,
-      "displayName": "Ghost Marmot"
+      "displayName": "Ghost Marmot",
+      "genomeHash": "fd8db8ebfb336124",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 4,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1,
+          "DAT": 1
+        },
+        "addressingModeCounts": {
+          "#": 3,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "fd8db8ebfb336124",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-2\nDAT.F #0,#0\norg 0",
+        "facts": [
+          "4 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g14sentineldwarf",
@@ -90009,7 +92461,47 @@
         "ties": 1
       },
       "score": 13.14,
-      "displayName": "Sump Mite"
+      "displayName": "Sump Mite",
+      "genomeHash": "36a5a71e6f767dcf",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 3,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "#": 1,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "36a5a71e6f767dcf",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+        "facts": [
+          "3 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g15sentinelspl",
@@ -90054,7 +92546,28 @@
         "ties": 6
       },
       "score": 6.11,
-      "displayName": "Pale Marmot"
+      "displayName": "Pale Marmot",
+      "genomeHash": "81bc859e6aeda877",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 2,
+        "opcodeCounts": {
+          "SPL": 1,
+          "MOV": 1
+        },
+        "addressingModeCounts": {
+          "$": 4
+        },
+        "hasSpl": true,
+        "backwardBranches": [],
+        "fixedArithmeticPointerSteps": [],
+        "genomeHash": "81bc859e6aeda877",
+        "normalizedGenome": "SPL.F $0,$0\nMOV.F $-5,$1\norg 0",
+        "facts": [
+          "2 instructions",
+          "contains 1 process-spawning instruction"
+        ]
+      }
     },
     {
       "id": "g17sentineldwarf",
@@ -90112,7 +92625,47 @@
         "ties": 1
       },
       "score": 16.14,
-      "displayName": "Neon Dagger"
+      "displayName": "Neon Dagger",
+      "genomeHash": "36a5a71e6f767dcf",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 3,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "#": 1,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "36a5a71e6f767dcf",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+        "facts": [
+          "3 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g18sentinelspl",
@@ -90169,7 +92722,28 @@
         "losses": 0,
         "ties": 6
       },
-      "score": 6.1
+      "score": 6.1,
+      "genomeHash": "e3ac5dfd5138a8cd",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 3,
+        "opcodeCounts": {
+          "SPL": 2,
+          "MOV": 1
+        },
+        "addressingModeCounts": {
+          "$": 6
+        },
+        "hasSpl": true,
+        "backwardBranches": [],
+        "fixedArithmeticPointerSteps": [],
+        "genomeHash": "e3ac5dfd5138a8cd",
+        "normalizedGenome": "SPL.F $0,$0\nSPL.F $0,$0\nMOV.F $0,$1\norg 0",
+        "facts": [
+          "3 instructions",
+          "contains 2 process-spawning instructions"
+        ]
+      }
     },
     {
       "id": "g210g14sentineldwar",
@@ -90240,7 +92814,55 @@
         "ties": 0
       },
       "score": 12.14,
-      "displayName": "Impossible Engine"
+      "displayName": "Impossible Engine",
+      "genomeHash": "937d0f7675052e7b",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 4,
+        "opcodeCounts": {
+          "ADD": 2,
+          "MOV": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "#": 2,
+          "$": 5,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 3,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          },
+          {
+            "at": 1,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "937d0f7675052e7b",
+        "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+        "facts": [
+          "4 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g22g14sentineldwarf",
@@ -90310,7 +92932,54 @@
         "losses": 2,
         "ties": 5
       },
-      "score": 8.14
+      "score": 8.14,
+      "genomeHash": "2874b514064a761c",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 4,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 2
+        },
+        "addressingModeCounts": {
+          "#": 1,
+          "$": 6,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          },
+          {
+            "at": 3,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "2874b514064a761c",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\nJMP.F $-2,$0\norg 0",
+        "facts": [
+          "4 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g23g15sentinelspl",
@@ -90354,7 +93023,28 @@
         "losses": 0,
         "ties": 8
       },
-      "score": 8.11
+      "score": 8.11,
+      "genomeHash": "2496af8665fa6d8d",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 2,
+        "opcodeCounts": {
+          "SPL": 1,
+          "MOV": 1
+        },
+        "addressingModeCounts": {
+          "$": 4
+        },
+        "hasSpl": true,
+        "backwardBranches": [],
+        "fixedArithmeticPointerSteps": [],
+        "genomeHash": "2496af8665fa6d8d",
+        "normalizedGenome": "SPL.F $0,$0\nMOV.F $-6,$1\norg 0",
+        "facts": [
+          "2 instructions",
+          "contains 1 process-spawning instruction"
+        ]
+      }
     },
     {
       "id": "g28g17sentineldwarf",
@@ -90412,7 +93102,47 @@
         "ties": 4
       },
       "score": 16.14,
-      "displayName": "Static Finch"
+      "displayName": "Static Finch",
+      "genomeHash": "f398341a5b7c3708",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 3,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "#": 1,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "f398341a5b7c3708",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $-3,@2\nJMP.F $-2,$0\norg 0",
+        "facts": [
+          "3 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g29g11sentineldwarf",
@@ -90483,7 +93213,48 @@
         "ties": 4
       },
       "score": 13.18,
-      "displayName": "Static Cricket"
+      "displayName": "Static Cricket",
+      "genomeHash": "b73afa7fb42dff92",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 4,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1,
+          "DAT": 1
+        },
+        "addressingModeCounts": {
+          "#": 3,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "b73afa7fb42dff92",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+        "facts": [
+          "4 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g30g29g11sentineldw",
@@ -90540,7 +93311,47 @@
         "losses": 4,
         "ties": 0
       },
-      "score": 12.15
+      "score": 12.15,
+      "genomeHash": "7ce6c9725e0b5b6b",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 3,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "#": 1,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "7ce6c9725e0b5b6b",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\norg 0",
+        "facts": [
+          "3 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g311g17sentineldwar",
@@ -90610,7 +93421,47 @@
         "losses": 1,
         "ties": 5
       },
-      "score": 11.14
+      "score": 11.14,
+      "genomeHash": "b2d0f2d68c3d7dff",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 4,
+        "opcodeCounts": {
+          "MOV": 2,
+          "ADD": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "$": 5,
+          "@": 2,
+          "#": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 3,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 1,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "b2d0f2d68c3d7dff",
+        "normalizedGenome": "MOV.F $2,@2\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+        "facts": [
+          "4 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g38g29g11sentineldw",
@@ -90694,7 +93545,56 @@
         "ties": 1
       },
       "score": 10.18,
-      "displayName": "Neon Comet"
+      "displayName": "Neon Comet",
+      "genomeHash": "736d632a1e84ce4b",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 5,
+        "opcodeCounts": {
+          "ADD": 2,
+          "MOV": 1,
+          "JMP": 1,
+          "DAT": 1
+        },
+        "addressingModeCounts": {
+          "#": 4,
+          "$": 5,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 3,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          },
+          {
+            "at": 1,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "736d632a1e84ce4b",
+        "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+        "facts": [
+          "5 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g43g38g29g11sentine",
@@ -90777,7 +93677,56 @@
         "losses": 4,
         "ties": 1
       },
-      "score": 10.18
+      "score": 10.18,
+      "genomeHash": "06066f9a2e02ed30",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 5,
+        "opcodeCounts": {
+          "ADD": 2,
+          "MOV": 1,
+          "JMP": 1,
+          "DAT": 1
+        },
+        "addressingModeCounts": {
+          "#": 4,
+          "$": 5,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 3,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 0,
+            "targetMode": "$",
+            "targetOffset": 3
+          },
+          {
+            "at": 1,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "06066f9a2e02ed30",
+        "normalizedGenome": "ADD.F #0,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+        "facts": [
+          "5 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 0",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g46g30g29g11sentine",
@@ -90835,7 +93784,47 @@
         "ties": 3
       },
       "score": 15.15,
-      "displayName": "Tin Needle"
+      "displayName": "Tin Needle",
+      "genomeHash": "7ce6c9725e0b5b6b",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 3,
+        "opcodeCounts": {
+          "ADD": 1,
+          "MOV": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "#": 1,
+          "$": 4,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 2,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "7ce6c9725e0b5b6b",
+        "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\norg 0",
+        "facts": [
+          "3 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     },
     {
       "id": "g49g210g14sentineld",
@@ -90906,7 +93895,55 @@
         "ties": 1
       },
       "score": 13.15,
-      "displayName": "Tin Oracle"
+      "displayName": "Tin Oracle",
+      "genomeHash": "696dd80f1e2c6217",
+      "warriorFacts": {
+        "schemaVersion": 1,
+        "instructionCount": 4,
+        "opcodeCounts": {
+          "ADD": 2,
+          "MOV": 1,
+          "JMP": 1
+        },
+        "addressingModeCounts": {
+          "#": 2,
+          "$": 5,
+          "@": 1
+        },
+        "hasSpl": false,
+        "backwardBranches": [
+          {
+            "at": 3,
+            "opcode": "JMP",
+            "offset": -2,
+            "loopLength": 2
+          }
+        ],
+        "fixedArithmeticPointerSteps": [
+          {
+            "at": 0,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 8
+          },
+          {
+            "at": 1,
+            "opcode": "ADD",
+            "step": 4,
+            "targetMode": "$",
+            "targetOffset": 3
+          }
+        ],
+        "genomeHash": "696dd80f1e2c6217",
+        "normalizedGenome": "ADD.F #4,$8\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+        "facts": [
+          "4 instructions",
+          "contains a backward JMP forming a 2-instruction loop",
+          "ADD uses fixed immediate step 4",
+          "ADD uses fixed immediate step 4"
+        ]
+      }
     }
   ],
   "replays": [
@@ -94389,7 +97426,36 @@
       "warriors": [
         "g17sentineldwarf",
         "g17sentineldwarf"
-      ]
+      ],
+      "description": {
+        "schemaVersion": 1,
+        "winner": 1,
+        "result": "w1",
+        "cycles": 8000,
+        "replayEventCount": 200,
+        "eliminationCycle": null,
+        "finalProcessCounts": [
+          0,
+          1
+        ],
+        "peakProcessCounts": [
+          1,
+          1
+        ],
+        "processBirths": [
+          0,
+          0
+        ],
+        "writesBySide": [
+          86,
+          86
+        ],
+        "facts": [
+          "Warrior 1 won at cycle 8000.",
+          "Final processes: 0 and 1.",
+          "Peak processes: 1 and 1."
+        ]
+      }
     },
     {
       "profileId": "kennel94",
@@ -97870,7 +100936,36 @@
       "warriors": [
         "g28g17sentineldwarf",
         "g17sentineldwarf"
-      ]
+      ],
+      "description": {
+        "schemaVersion": 1,
+        "winner": null,
+        "result": "tie",
+        "cycles": 8000,
+        "replayEventCount": 200,
+        "eliminationCycle": null,
+        "finalProcessCounts": [
+          1,
+          1
+        ],
+        "peakProcessCounts": [
+          1,
+          1
+        ],
+        "processBirths": [
+          0,
+          0
+        ],
+        "writesBySide": [
+          86,
+          86
+        ],
+        "facts": [
+          "Neither side eliminated the other before cycle 8000.",
+          "Final processes: 1 and 1.",
+          "Peak processes: 1 and 1."
+        ]
+      }
     },
     {
       "profileId": "kennel94",
@@ -101351,7 +104446,36 @@
       "warriors": [
         "g46g30g29g11sentine",
         "g17sentineldwarf"
-      ]
+      ],
+      "description": {
+        "schemaVersion": 1,
+        "winner": 0,
+        "result": "w0",
+        "cycles": 8000,
+        "replayEventCount": 200,
+        "eliminationCycle": null,
+        "finalProcessCounts": [
+          1,
+          0
+        ],
+        "peakProcessCounts": [
+          1,
+          1
+        ],
+        "processBirths": [
+          0,
+          0
+        ],
+        "writesBySide": [
+          86,
+          86
+        ],
+        "facts": [
+          "Warrior 0 won at cycle 8000.",
+          "Final processes: 1 and 0.",
+          "Peak processes: 1 and 1."
+        ]
+      }
     },
     {
       "profileId": "kennel94",
@@ -104837,7 +107961,36 @@
       "warriors": [
         "g49g210g14sentineld",
         "g17sentineldwarf"
-      ]
+      ],
+      "description": {
+        "schemaVersion": 1,
+        "winner": 0,
+        "result": "w0",
+        "cycles": 8000,
+        "replayEventCount": 200,
+        "eliminationCycle": null,
+        "finalProcessCounts": [
+          1,
+          0
+        ],
+        "peakProcessCounts": [
+          1,
+          1
+        ],
+        "processBirths": [
+          0,
+          0
+        ],
+        "writesBySide": [
+          87,
+          86
+        ],
+        "facts": [
+          "Warrior 0 won at cycle 8000.",
+          "Final processes: 1 and 0.",
+          "Peak processes: 1 and 1."
+        ]
+      }
     },
     {
       "profileId": "kennel94",
@@ -108318,7 +111471,36 @@
       "warriors": [
         "g14sentineldwarf",
         "g17sentineldwarf"
-      ]
+      ],
+      "description": {
+        "schemaVersion": 1,
+        "winner": 1,
+        "result": "w1",
+        "cycles": 8000,
+        "replayEventCount": 200,
+        "eliminationCycle": null,
+        "finalProcessCounts": [
+          0,
+          1
+        ],
+        "peakProcessCounts": [
+          1,
+          1
+        ],
+        "processBirths": [
+          0,
+          0
+        ],
+        "writesBySide": [
+          86,
+          86
+        ],
+        "facts": [
+          "Warrior 1 won at cycle 8000.",
+          "Final processes: 0 and 1.",
+          "Peak processes: 1 and 1."
+        ]
+      }
     }
   ]
 }
