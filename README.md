@@ -17,22 +17,13 @@ Unsupported syntax/semantics fail explicitly: arithmetic expressions, multiple m
 
 Hard caps live in `engine/profiles.mjs` and `kennel/config.mjs`.
 
-## Run locally
+## Public site
 
-```sh
-node kennel/build-site-data.mjs
-python3 -m http.server 8000 -d docs
-```
+The supported user-facing product is the GitHub Pages site in `docs/`: a published history viewer, local browser fighting pit, and editable browser-only challenger. There is no supported local Node-hosted product runtime.
 
-Open <http://localhost:8000>. The browser uses the same `engine/corewar-vm.mjs` and parser as Node.
+## Private kennel machinery
 
-## Advance one epoch
-
-```sh
-node kennel/evolve.mjs 1
-```
-
-Or use GitHub Actions: **Advance Kennel** -> `workflow_dispatch` -> `epochs` (default `1`, capped small). The workflow commits changed state and regenerated `docs/data/` only after a real epoch.
+Evolution, tournament evaluation, semantic analysis, tests, and static-data publishing run under Node in GitHub Actions. Use GitHub Actions: **Advance Kennel** -> `workflow_dispatch` -> `epochs` (default `1`, capped small). The workflow commits changed state and regenerated `docs/data/` only after a real epoch.
 
 ## Tests
 
