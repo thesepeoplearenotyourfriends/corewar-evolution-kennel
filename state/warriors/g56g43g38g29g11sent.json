@@ -77,20 +77,20 @@
   "generation": 5,
   "profileId": "kennel94",
   "record": {
-    "wins": 4,
-    "losses": 1,
-    "ties": 3
-  },
-  "score": 15.18,
-  "benchmarkRecord": {
-    "wins": 2,
+    "wins": 5,
     "losses": 2,
-    "ties": 4
+    "ties": 1
   },
-  "benchmarkScore": 10.18,
+  "score": 16.18,
+  "benchmarkRecord": {
+    "wins": 5,
+    "losses": 1,
+    "ties": 2
+  },
+  "benchmarkScore": 17.18,
   "displayName": "Static Needle",
   "genomeHash": "99cfe985395caa87",
-  "currentLeagueRank": 4,
+  "currentLeagueRank": 2,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 5,
@@ -143,17 +143,17 @@
   "retentionReason": "retained as broad competitor",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 4,
-      "losses": 1,
-      "ties": 3
+      "wins": 5,
+      "losses": 2,
+      "ties": 1
     },
     "benchmarkRecord": {
-      "wins": 2,
-      "losses": 2,
-      "ties": 4
+      "wins": 5,
+      "losses": 1,
+      "ties": 2
     },
-    "currentLeagueRank": 4,
-    "summary": "current league record: 4W / 3D / 1L; benchmark record: 2W / 4D / 2L"
+    "currentLeagueRank": 2,
+    "summary": "current league record: 5W / 1D / 2L; benchmark record: 5W / 2D / 1L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
@@ -201,6 +201,21 @@
       "contains a backward JMP forming a 2-instruction loop",
       "ADD uses fixed immediate step 0",
       "ADD uses fixed immediate step 4"
+    ]
+  },
+  "duplicateProvenance": {
+    "firstSeen": {
+      "id": "g56g43g38g29g11sent",
+      "generation": 5
+    },
+    "alsoAppearedAs": [
+      {
+        "id": "g611g56g43g38g29g11",
+        "generation": 6,
+        "parentIds": [
+          "g56g43g38g29g11sent"
+        ]
+      }
     ]
   }
 }

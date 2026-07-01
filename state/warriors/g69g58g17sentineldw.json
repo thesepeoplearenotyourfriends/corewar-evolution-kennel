@@ -1,23 +1,11 @@
 {
-  "id": "g210g14sentineldwar",
-  "name": "g210g14sentineldwar",
+  "id": "g69g58g17sentineldw",
+  "name": "g69g58g17sentineldw",
   "parentIds": [
-    "g14sentineldwarf"
+    "g58g17sentineldwarf"
   ],
+  "mutationDelta": "a-operand 2→6",
   "instructions": [
-    {
-      "opcode": "ADD",
-      "modifier": "F",
-      "a": {
-        "mode": "#",
-        "value": 4
-      },
-      "b": {
-        "mode": "$",
-        "value": 3
-      },
-      "raw": "ADD.F #4, 3"
-    },
     {
       "opcode": "ADD",
       "modifier": "F",
@@ -36,13 +24,13 @@
       "modifier": "F",
       "a": {
         "mode": "$",
-        "value": 2
+        "value": 6
       },
       "b": {
         "mode": "@",
         "value": 2
       },
-      "raw": "MOV.F 2, @2"
+      "raw": "MOV.F 6, @2"
     },
     {
       "opcode": "JMP",
@@ -59,7 +47,8 @@
     }
   ],
   "start": 0,
-  "source": ";name g210g14sentineldwar\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "source": ";name g69g58g17sentineldw\norg 0\nADD.F #4, 3\nMOV.F 6, @2\nJMP.F -2, 0\nend\n",
+  "generation": 6,
   "profileId": "kennel94",
   "record": {
     "wins": 3,
@@ -67,32 +56,31 @@
     "ties": 1
   },
   "score": 10.14,
-  "displayName": "Impossible Engine",
   "benchmarkRecord": {
-    "wins": 1,
-    "losses": 2,
-    "ties": 5
+    "wins": 4,
+    "losses": 1,
+    "ties": 3
   },
-  "benchmarkScore": 8.14,
-  "genomeHash": "937d0f7675052e7b",
-  "currentLeagueRank": 7,
+  "benchmarkScore": 15.14,
+  "genomeHash": "e1f3ab5376b8a317",
+  "currentLeagueRank": 6,
   "semantic": {
     "schemaVersion": 1,
-    "instructionCount": 4,
+    "instructionCount": 3,
     "opcodeCounts": {
-      "ADD": 2,
+      "ADD": 1,
       "MOV": 1,
       "JMP": 1
     },
     "addressingModeCounts": {
-      "#": 2,
-      "$": 5,
+      "#": 1,
+      "$": 4,
       "@": 1
     },
     "hasSpl": false,
     "backwardBranches": [
       {
-        "at": 3,
+        "at": 2,
         "opcode": "JMP",
         "offset": -2,
         "loopLength": 2
@@ -105,21 +93,13 @@
         "step": 4,
         "targetMode": "$",
         "targetOffset": 3
-      },
-      {
-        "at": 1,
-        "opcode": "ADD",
-        "step": 4,
-        "targetMode": "$",
-        "targetOffset": 3
       }
     ],
-    "genomeHash": "937d0f7675052e7b",
-    "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "genomeHash": "e1f3ab5376b8a317",
+    "normalizedGenome": "ADD.F #4,$3\nMOV.F $6,@2\nJMP.F $-2,$0\norg 0",
     "facts": [
-      "4 instructions",
+      "3 instructions",
       "contains a backward JMP forming a 2-instruction loop",
-      "ADD uses fixed immediate step 4",
       "ADD uses fixed immediate step 4"
     ]
   },
@@ -132,30 +112,30 @@
       "ties": 1
     },
     "benchmarkRecord": {
-      "wins": 1,
-      "losses": 2,
-      "ties": 5
+      "wins": 4,
+      "losses": 1,
+      "ties": 3
     },
-    "currentLeagueRank": 7,
-    "summary": "current league rank #7; current league record: 3W / 1D / 4L"
+    "currentLeagueRank": 6,
+    "summary": "current league rank #6; current league record: 3W / 1D / 4L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
-    "instructionCount": 4,
+    "instructionCount": 3,
     "opcodeCounts": {
-      "ADD": 2,
+      "ADD": 1,
       "MOV": 1,
       "JMP": 1
     },
     "addressingModeCounts": {
-      "#": 2,
-      "$": 5,
+      "#": 1,
+      "$": 4,
       "@": 1
     },
     "hasSpl": false,
     "backwardBranches": [
       {
-        "at": 3,
+        "at": 2,
         "opcode": "JMP",
         "offset": -2,
         "loopLength": 2
@@ -168,21 +148,13 @@
         "step": 4,
         "targetMode": "$",
         "targetOffset": 3
-      },
-      {
-        "at": 1,
-        "opcode": "ADD",
-        "step": 4,
-        "targetMode": "$",
-        "targetOffset": 3
       }
     ],
-    "genomeHash": "937d0f7675052e7b",
-    "normalizedGenome": "ADD.F #4,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "genomeHash": "e1f3ab5376b8a317",
+    "normalizedGenome": "ADD.F #4,$3\nMOV.F $6,@2\nJMP.F $-2,$0\norg 0",
     "facts": [
-      "4 instructions",
+      "3 instructions",
       "contains a backward JMP forming a 2-instruction loop",
-      "ADD uses fixed immediate step 4",
       "ADD uses fixed immediate step 4"
     ]
   }
