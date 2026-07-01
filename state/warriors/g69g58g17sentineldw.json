@@ -51,19 +51,19 @@
   "generation": 6,
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
-    "losses": 4,
+    "wins": 7,
+    "losses": 0,
     "ties": 1
   },
-  "score": 10.14,
+  "score": 22.14,
   "benchmarkRecord": {
     "wins": 4,
-    "losses": 1,
-    "ties": 3
+    "losses": 2,
+    "ties": 2
   },
-  "benchmarkScore": 15.14,
+  "benchmarkScore": 14.14,
   "genomeHash": "e1f3ab5376b8a317",
-  "currentLeagueRank": 6,
+  "currentLeagueRank": 1,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 3,
@@ -104,20 +104,20 @@
     ]
   },
   "status": "active",
-  "retentionReason": "retained as roster fill after evidence lanes",
+  "retentionReason": "retained as broad competitor",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 3,
-      "losses": 4,
+      "wins": 7,
+      "losses": 0,
       "ties": 1
     },
     "benchmarkRecord": {
       "wins": 4,
-      "losses": 1,
-      "ties": 3
+      "losses": 2,
+      "ties": 2
     },
-    "currentLeagueRank": 6,
-    "summary": "current league rank #6; current league record: 3W / 1D / 4L"
+    "currentLeagueRank": 1,
+    "summary": "current league record: 7W / 1D / 0L; benchmark record: 4W / 2D / 2L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
@@ -157,5 +157,6 @@
       "contains a backward JMP forming a 2-instruction loop",
       "ADD uses fixed immediate step 4"
     ]
-  }
+  },
+  "displayName": "Moss Engine"
 }

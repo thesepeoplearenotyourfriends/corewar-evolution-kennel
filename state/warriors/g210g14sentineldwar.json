@@ -62,20 +62,20 @@
   "source": ";name g210g14sentineldwar\norg 0\nADD.F #4, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
-    "losses": 4,
-    "ties": 1
+    "wins": 5,
+    "losses": 3,
+    "ties": 0
   },
-  "score": 10.14,
+  "score": 15.14,
   "displayName": "Impossible Engine",
   "benchmarkRecord": {
-    "wins": 1,
+    "wins": 4,
     "losses": 2,
-    "ties": 5
+    "ties": 2
   },
-  "benchmarkScore": 8.14,
+  "benchmarkScore": 14.14,
   "genomeHash": "937d0f7675052e7b",
-  "currentLeagueRank": 7,
+  "currentLeagueRank": 3,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 4,
@@ -124,20 +124,20 @@
     ]
   },
   "status": "active",
-  "retentionReason": "retained as roster fill after evidence lanes",
+  "retentionReason": "retained as broad competitor",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 3,
-      "losses": 4,
-      "ties": 1
+      "wins": 5,
+      "losses": 3,
+      "ties": 0
     },
     "benchmarkRecord": {
-      "wins": 1,
+      "wins": 4,
       "losses": 2,
-      "ties": 5
+      "ties": 2
     },
-    "currentLeagueRank": 7,
-    "summary": "current league rank #7; current league record: 3W / 1D / 4L"
+    "currentLeagueRank": 3,
+    "summary": "current league record: 5W / 0D / 3L; benchmark record: 4W / 2D / 2L"
   },
   "warriorFacts": {
     "schemaVersion": 1,

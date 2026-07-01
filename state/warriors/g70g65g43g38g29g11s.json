@@ -1,23 +1,23 @@
 {
-  "id": "g60g511g49g210g14se",
-  "name": "g60g511g49g210g14se",
+  "id": "g70g65g43g38g29g11s",
+  "name": "g70g65g43g38g29g11s",
   "parentIds": [
-    "g511g49g210g14senti"
+    "g65g43g38g29g11sent"
   ],
-  "mutationDelta": "b-mode @→@",
+  "mutationDelta": "b-operand 3→3",
   "instructions": [
     {
       "opcode": "ADD",
       "modifier": "F",
       "a": {
         "mode": "#",
-        "value": 4
+        "value": 3
       },
       "b": {
         "mode": "$",
-        "value": 10
+        "value": 3
       },
-      "raw": "ADD.F #4, 10"
+      "raw": "ADD.F #3, 3"
     },
     {
       "opcode": "ADD",
@@ -54,54 +54,68 @@
       },
       "b": {
         "mode": "$",
+        "value": -5
+      },
+      "raw": "JMP.F -2, -5"
+    },
+    {
+      "opcode": "DAT",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
         "value": 0
       },
-      "raw": "JMP.F -2, 0"
+      "b": {
+        "mode": "#",
+        "value": 0
+      },
+      "raw": "DAT.F #0, #0"
     }
   ],
   "start": 0,
-  "source": ";name g60g511g49g210g14se\norg 0\nADD.F #4, 10\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
-  "generation": 6,
+  "source": ";name g70g65g43g38g29g11s\norg 0\nADD.F #3, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
+  "generation": 7,
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
-    "losses": 4,
-    "ties": 1
+    "wins": 1,
+    "losses": 2,
+    "ties": 5
   },
-  "score": 10.15,
+  "score": 8.19,
   "benchmarkRecord": {
     "wins": 4,
     "losses": 3,
     "ties": 1
   },
-  "benchmarkScore": 13.15,
-  "genomeHash": "8148f6e3bc2bcd42",
+  "benchmarkScore": 13.19,
+  "genomeHash": "ca761077d0840108",
   "duplicateProvenance": {
     "firstSeen": {
-      "id": "g60g511g49g210g14se",
-      "generation": 6
+      "id": "g70g65g43g38g29g11s",
+      "generation": 7
     },
     "alsoAppearedAs": [
       {
-        "id": "g511g49g210g14senti",
-        "generation": 5,
+        "id": "g65g43g38g29g11sent",
+        "generation": 6,
         "parentIds": [
-          "g49g210g14sentineld"
+          "g43g38g29g11sentine"
         ]
       }
     ]
   },
-  "currentLeagueRank": 5,
+  "currentLeagueRank": 6,
   "semantic": {
     "schemaVersion": 1,
-    "instructionCount": 4,
+    "instructionCount": 5,
     "opcodeCounts": {
       "ADD": 2,
       "MOV": 1,
-      "JMP": 1
+      "JMP": 1,
+      "DAT": 1
     },
     "addressingModeCounts": {
-      "#": 2,
+      "#": 4,
       "$": 5,
       "@": 1
     },
@@ -118,9 +132,9 @@
       {
         "at": 0,
         "opcode": "ADD",
-        "step": 4,
+        "step": 3,
         "targetMode": "$",
-        "targetOffset": 10
+        "targetOffset": 3
       },
       {
         "at": 1,
@@ -130,41 +144,42 @@
         "targetOffset": 3
       }
     ],
-    "genomeHash": "8148f6e3bc2bcd42",
-    "normalizedGenome": "ADD.F #4,$10\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "genomeHash": "ca761077d0840108",
+    "normalizedGenome": "ADD.F #3,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
     "facts": [
-      "4 instructions",
+      "5 instructions",
       "contains a backward JMP forming a 2-instruction loop",
-      "ADD uses fixed immediate step 4",
+      "ADD uses fixed immediate step 3",
       "ADD uses fixed immediate step 4"
     ]
   },
   "status": "active",
-  "retentionReason": "retained as broad competitor",
+  "retentionReason": "retained as roster fill after evidence lanes",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 3,
-      "losses": 4,
-      "ties": 1
+      "wins": 1,
+      "losses": 2,
+      "ties": 5
     },
     "benchmarkRecord": {
       "wins": 4,
       "losses": 3,
       "ties": 1
     },
-    "currentLeagueRank": 5,
-    "summary": "current league record: 3W / 1D / 4L; benchmark record: 4W / 1D / 3L"
+    "currentLeagueRank": 6,
+    "summary": "current league rank #6; current league record: 1W / 5D / 2L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
-    "instructionCount": 4,
+    "instructionCount": 5,
     "opcodeCounts": {
       "ADD": 2,
       "MOV": 1,
-      "JMP": 1
+      "JMP": 1,
+      "DAT": 1
     },
     "addressingModeCounts": {
-      "#": 2,
+      "#": 4,
       "$": 5,
       "@": 1
     },
@@ -181,9 +196,9 @@
       {
         "at": 0,
         "opcode": "ADD",
-        "step": 4,
+        "step": 3,
         "targetMode": "$",
-        "targetOffset": 10
+        "targetOffset": 3
       },
       {
         "at": 1,
@@ -193,14 +208,13 @@
         "targetOffset": 3
       }
     ],
-    "genomeHash": "8148f6e3bc2bcd42",
-    "normalizedGenome": "ADD.F #4,$10\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "genomeHash": "ca761077d0840108",
+    "normalizedGenome": "ADD.F #3,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
     "facts": [
-      "4 instructions",
+      "5 instructions",
       "contains a backward JMP forming a 2-instruction loop",
-      "ADD uses fixed immediate step 4",
+      "ADD uses fixed immediate step 3",
       "ADD uses fixed immediate step 4"
     ]
-  },
-  "displayName": "Noisy Lantern"
+  }
 }

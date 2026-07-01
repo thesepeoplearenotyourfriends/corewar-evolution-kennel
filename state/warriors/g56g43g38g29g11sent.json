@@ -77,20 +77,20 @@
   "generation": 5,
   "profileId": "kennel94",
   "record": {
+    "wins": 1,
+    "losses": 2,
+    "ties": 5
+  },
+  "score": 8.18,
+  "benchmarkRecord": {
     "wins": 5,
     "losses": 2,
     "ties": 1
   },
-  "score": 16.18,
-  "benchmarkRecord": {
-    "wins": 5,
-    "losses": 1,
-    "ties": 2
-  },
-  "benchmarkScore": 17.18,
+  "benchmarkScore": 16.18,
   "displayName": "Static Needle",
   "genomeHash": "99cfe985395caa87",
-  "currentLeagueRank": 2,
+  "currentLeagueRank": 7,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 5,
@@ -140,20 +140,270 @@
     ]
   },
   "status": "active",
-  "retentionReason": "retained as broad competitor",
+  "retentionReason": "retained as champion counter",
   "selectionEvidence": {
-    "currentLeagueRecord": {
-      "wins": 5,
-      "losses": 2,
-      "ties": 1
+    "against": {
+      "opponentId": "g69g58g17sentineldw",
+      "opponentName": "Moss Engine",
+      "bouts": 8,
+      "record": {
+        "wins": 4,
+        "losses": 1,
+        "ties": 3
+      },
+      "boutsDetail": [
+        {
+          "schemaVersion": 1,
+          "winner": null,
+          "result": "tie",
+          "cycles": 8000,
+          "replayEventCount": 5413,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            1,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            2667
+          ],
+          "facts": [
+            "Neither side eliminated the other before cycle 8000.",
+            "Final processes: 1 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-a-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": null,
+          "result": "tie",
+          "cycles": 8000,
+          "replayEventCount": 5413,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            1,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            2667
+          ],
+          "facts": [
+            "Neither side eliminated the other before cycle 8000.",
+            "Final processes: 1 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-a-1",
+          "order": "opponent-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": null,
+          "result": "tie",
+          "cycles": 8000,
+          "replayEventCount": 5413,
+          "eliminationCycle": null,
+          "finalProcessCounts": [
+            1,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            2667
+          ],
+          "facts": [
+            "Neither side eliminated the other before cycle 8000.",
+            "Final processes: 1 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-b-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 1,
+          "result": "w1",
+          "cycles": 8000,
+          "replayEventCount": 2745,
+          "eliminationCycle": 150,
+          "finalProcessCounts": [
+            0,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            50,
+            2667
+          ],
+          "facts": [
+            "Warrior 1 won at cycle 8000.",
+            "Final processes: 0 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-b-1",
+          "order": "opponent-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2929,
+          "eliminationCycle": 547,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            182
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-c-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2872,
+          "eliminationCycle": 373,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            125
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-c-1",
+          "order": "opponent-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2871,
+          "eliminationCycle": 373,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            124
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-d-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 1,
+          "result": "w1",
+          "cycles": 8000,
+          "replayEventCount": 2894,
+          "eliminationCycle": 588,
+          "finalProcessCounts": [
+            0,
+            1
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            196,
+            2667
+          ],
+          "facts": [
+            "Warrior 1 won at cycle 8000.",
+            "Final processes: 0 and 1.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g56g43g38g29g11sent-g69g58g17sentineldw-d-1",
+          "order": "opponent-left"
+        }
+      ]
     },
-    "benchmarkRecord": {
-      "wins": 5,
-      "losses": 1,
-      "ties": 2
-    },
-    "currentLeagueRank": 2,
-    "summary": "current league record: 5W / 1D / 2L; benchmark record: 5W / 2D / 1L"
+    "overallRank": 7,
+    "summary": "vs Moss Engine: 4W / 3D / 1L across 8 balanced bouts; overall league rank #7"
   },
   "warriorFacts": {
     "schemaVersion": 1,
