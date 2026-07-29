@@ -1,0 +1,191 @@
+{
+  "id": "g106g84g60g511g49g2",
+  "name": "g106g84g60g511g49g2",
+  "parentIds": [
+    "g84g60g511g49g210g1"
+  ],
+  "mutationDelta": "a-operand 0→-3",
+  "instructions": [
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": -3
+      },
+      "b": {
+        "mode": "$",
+        "value": 10
+      },
+      "raw": "ADD.F #-3, 10"
+    },
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #4, 3"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 2
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F 2, @2"
+    },
+    {
+      "opcode": "JMP",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -2
+      },
+      "b": {
+        "mode": "$",
+        "value": 0
+      },
+      "raw": "JMP.F -2, 0"
+    }
+  ],
+  "start": 0,
+  "source": ";name g106g84g60g511g49g2\norg 0\nADD.F #-3, 10\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "generation": 10,
+  "profileId": "kennel94",
+  "record": {
+    "wins": 4,
+    "losses": 3,
+    "ties": 1
+  },
+  "score": 13.16,
+  "benchmarkRecord": {
+    "wins": 3,
+    "losses": 4,
+    "ties": 1
+  },
+  "benchmarkScore": 10.16,
+  "displayName": "Velvet Hammer",
+  "genomeHash": "cc054c0088d601e6",
+  "currentLeagueRank": 5,
+  "semantic": {
+    "schemaVersion": 1,
+    "instructionCount": 4,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 2,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": -3,
+        "targetMode": "$",
+        "targetOffset": 10
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "cc054c0088d601e6",
+    "normalizedGenome": "ADD.F #-3,$10\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "4 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step -3",
+      "ADD uses fixed immediate step 4"
+    ]
+  },
+  "status": "active",
+  "retentionReason": "retained as broad competitor",
+  "selectionEvidence": {
+    "currentLeagueRecord": {
+      "wins": 4,
+      "losses": 3,
+      "ties": 1
+    },
+    "benchmarkRecord": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 1
+    },
+    "currentLeagueRank": 5,
+    "summary": "current league record: 4W / 1D / 3L; benchmark record: 3W / 1D / 4L"
+  },
+  "warriorFacts": {
+    "schemaVersion": 1,
+    "instructionCount": 4,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 2,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": -3,
+        "targetMode": "$",
+        "targetOffset": 10
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "cc054c0088d601e6",
+    "normalizedGenome": "ADD.F #-3,$10\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "4 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step -3",
+      "ADD uses fixed immediate step 4"
+    ]
+  }
+}

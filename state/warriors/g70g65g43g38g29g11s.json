@@ -77,17 +77,17 @@
   "generation": 7,
   "profileId": "kennel94",
   "record": {
-    "wins": 1,
-    "losses": 2,
-    "ties": 5
-  },
-  "score": 8.19,
-  "benchmarkRecord": {
     "wins": 4,
     "losses": 3,
     "ties": 1
   },
-  "benchmarkScore": 13.19,
+  "score": 13.19,
+  "benchmarkRecord": {
+    "wins": 3,
+    "losses": 4,
+    "ties": 1
+  },
+  "benchmarkScore": 10.19,
   "genomeHash": "ca761077d0840108",
   "duplicateProvenance": {
     "firstSeen": {
@@ -101,10 +101,17 @@
         "parentIds": [
           "g43g38g29g11sentine"
         ]
+      },
+      {
+        "id": "g95g70g65g43g38g29g",
+        "generation": 9,
+        "parentIds": [
+          "g70g65g43g38g29g11s"
+        ]
       }
     ]
   },
-  "currentLeagueRank": 6,
+  "currentLeagueRank": 4,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 5,
@@ -154,20 +161,20 @@
     ]
   },
   "status": "active",
-  "retentionReason": "retained as roster fill after evidence lanes",
+  "retentionReason": "retained as broad competitor",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 1,
-      "losses": 2,
-      "ties": 5
-    },
-    "benchmarkRecord": {
       "wins": 4,
       "losses": 3,
       "ties": 1
     },
-    "currentLeagueRank": 6,
-    "summary": "current league rank #6; current league record: 1W / 5D / 2L"
+    "benchmarkRecord": {
+      "wins": 3,
+      "losses": 4,
+      "ties": 1
+    },
+    "currentLeagueRank": 4,
+    "summary": "current league record: 4W / 1D / 3L; benchmark record: 3W / 1D / 4L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
@@ -216,5 +223,6 @@
       "ADD uses fixed immediate step 3",
       "ADD uses fixed immediate step 4"
     ]
-  }
+  },
+  "displayName": "Pale Engine"
 }

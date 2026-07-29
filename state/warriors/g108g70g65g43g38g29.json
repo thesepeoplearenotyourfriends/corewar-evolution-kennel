@@ -1,0 +1,206 @@
+{
+  "id": "g108g70g65g43g38g29",
+  "name": "g108g70g65g43g38g29",
+  "parentIds": [
+    "g70g65g43g38g29g11s"
+  ],
+  "mutationDelta": "a-operand 3→1",
+  "instructions": [
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 1
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #1, 3"
+    },
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #4, 3"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 2
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F 2, @2"
+    },
+    {
+      "opcode": "JMP",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -2
+      },
+      "b": {
+        "mode": "$",
+        "value": -5
+      },
+      "raw": "JMP.F -2, -5"
+    },
+    {
+      "opcode": "DAT",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 0
+      },
+      "b": {
+        "mode": "#",
+        "value": 0
+      },
+      "raw": "DAT.F #0, #0"
+    }
+  ],
+  "start": 0,
+  "source": ";name g108g70g65g43g38g29\norg 0\nADD.F #1, 3\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, -5\nDAT.F #0, #0\nend\n",
+  "generation": 10,
+  "profileId": "kennel94",
+  "record": {
+    "wins": 6,
+    "losses": 1,
+    "ties": 1
+  },
+  "score": 19.19,
+  "benchmarkRecord": {
+    "wins": 3,
+    "losses": 3,
+    "ties": 2
+  },
+  "benchmarkScore": 11.19,
+  "displayName": "Velvet Lantern",
+  "genomeHash": "07bf0b4f4c96400d",
+  "currentLeagueRank": 1,
+  "semantic": {
+    "schemaVersion": 1,
+    "instructionCount": 5,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1,
+      "DAT": 1
+    },
+    "addressingModeCounts": {
+      "#": 4,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 1,
+        "targetMode": "$",
+        "targetOffset": 3
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "07bf0b4f4c96400d",
+    "normalizedGenome": "ADD.F #1,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "facts": [
+      "5 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 1",
+      "ADD uses fixed immediate step 4"
+    ]
+  },
+  "status": "active",
+  "retentionReason": "retained as broad competitor",
+  "selectionEvidence": {
+    "currentLeagueRecord": {
+      "wins": 6,
+      "losses": 1,
+      "ties": 1
+    },
+    "benchmarkRecord": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 2
+    },
+    "currentLeagueRank": 1,
+    "summary": "current league record: 6W / 1D / 1L; benchmark record: 3W / 2D / 3L"
+  },
+  "warriorFacts": {
+    "schemaVersion": 1,
+    "instructionCount": 5,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1,
+      "DAT": 1
+    },
+    "addressingModeCounts": {
+      "#": 4,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 1,
+        "targetMode": "$",
+        "targetOffset": 3
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "07bf0b4f4c96400d",
+    "normalizedGenome": "ADD.F #1,$3\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$-5\nDAT.F #0,#0\norg 0",
+    "facts": [
+      "5 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 1",
+      "ADD uses fixed immediate step 4"
+    ]
+  }
+}

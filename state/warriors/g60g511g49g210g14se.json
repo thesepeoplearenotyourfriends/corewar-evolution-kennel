@@ -71,10 +71,10 @@
   "score": 10.15,
   "benchmarkRecord": {
     "wins": 4,
-    "losses": 3,
-    "ties": 1
+    "losses": 4,
+    "ties": 0
   },
-  "benchmarkScore": 13.15,
+  "benchmarkScore": 12.15,
   "genomeHash": "8148f6e3bc2bcd42",
   "duplicateProvenance": {
     "firstSeen": {
@@ -91,7 +91,7 @@
       }
     ]
   },
-  "currentLeagueRank": 5,
+  "currentLeagueRank": 8,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 4,
@@ -140,7 +140,7 @@
     ]
   },
   "status": "active",
-  "retentionReason": "retained as broad competitor",
+  "retentionReason": "retained as roster fill after evidence lanes",
   "selectionEvidence": {
     "currentLeagueRecord": {
       "wins": 3,
@@ -149,11 +149,11 @@
     },
     "benchmarkRecord": {
       "wins": 4,
-      "losses": 3,
-      "ties": 1
+      "losses": 4,
+      "ties": 0
     },
-    "currentLeagueRank": 5,
-    "summary": "current league record: 3W / 1D / 4L; benchmark record: 4W / 1D / 3L"
+    "currentLeagueRank": 8,
+    "summary": "current league rank #8; current league record: 3W / 1D / 4L"
   },
   "warriorFacts": {
     "schemaVersion": 1,

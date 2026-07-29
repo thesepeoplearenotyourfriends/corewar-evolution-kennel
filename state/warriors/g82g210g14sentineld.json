@@ -1,0 +1,191 @@
+{
+  "id": "g82g210g14sentineld",
+  "name": "g82g210g14sentineld",
+  "parentIds": [
+    "g210g14sentineldwar"
+  ],
+  "mutationDelta": "b-operand 3→-2",
+  "instructions": [
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": -2
+      },
+      "raw": "ADD.F #4, -2"
+    },
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #4, 3"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 2
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F 2, @2"
+    },
+    {
+      "opcode": "JMP",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -2
+      },
+      "b": {
+        "mode": "$",
+        "value": 0
+      },
+      "raw": "JMP.F -2, 0"
+    }
+  ],
+  "start": 0,
+  "source": ";name g82g210g14sentineld\norg 0\nADD.F #4, -2\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "generation": 8,
+  "profileId": "kennel94",
+  "record": {
+    "wins": 2,
+    "losses": 3,
+    "ties": 3
+  },
+  "score": 9.15,
+  "benchmarkRecord": {
+    "wins": 3,
+    "losses": 3,
+    "ties": 2
+  },
+  "benchmarkScore": 11.15,
+  "displayName": "Static Mite",
+  "genomeHash": "6fa1c50839cbed37",
+  "currentLeagueRank": 8,
+  "semantic": {
+    "schemaVersion": 1,
+    "instructionCount": 4,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 2,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": -2
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "6fa1c50839cbed37",
+    "normalizedGenome": "ADD.F #4,$-2\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "4 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4",
+      "ADD uses fixed immediate step 4"
+    ]
+  },
+  "status": "active",
+  "retentionReason": "retained as roster fill after evidence lanes",
+  "selectionEvidence": {
+    "currentLeagueRecord": {
+      "wins": 2,
+      "losses": 3,
+      "ties": 3
+    },
+    "benchmarkRecord": {
+      "wins": 3,
+      "losses": 3,
+      "ties": 2
+    },
+    "currentLeagueRank": 8,
+    "summary": "current league rank #8; current league record: 2W / 3D / 3L"
+  },
+  "warriorFacts": {
+    "schemaVersion": 1,
+    "instructionCount": 4,
+    "opcodeCounts": {
+      "ADD": 2,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 2,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": -2
+      },
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "6fa1c50839cbed37",
+    "normalizedGenome": "ADD.F #4,$-2\nADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "4 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4",
+      "ADD uses fixed immediate step 4"
+    ]
+  }
+}

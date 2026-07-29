@@ -51,17 +51,17 @@
   "generation": 7,
   "profileId": "kennel94",
   "record": {
-    "wins": 3,
+    "wins": 5,
     "losses": 2,
-    "ties": 3
+    "ties": 1
   },
-  "score": 12.14,
+  "score": 16.14,
   "benchmarkRecord": {
-    "wins": 3,
-    "losses": 5,
-    "ties": 0
+    "wins": 4,
+    "losses": 2,
+    "ties": 2
   },
-  "benchmarkScore": 9.14,
+  "benchmarkScore": 14.14,
   "displayName": "Sump Marmot",
   "genomeHash": "36a5a71e6f767dcf",
   "duplicateProvenance": {
@@ -79,7 +79,7 @@
       }
     ]
   },
-  "currentLeagueRank": 4,
+  "currentLeagueRank": 2,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 3,
@@ -123,17 +123,17 @@
   "retentionReason": "retained as broad competitor",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 3,
+      "wins": 5,
       "losses": 2,
-      "ties": 3
+      "ties": 1
     },
     "benchmarkRecord": {
-      "wins": 3,
-      "losses": 5,
-      "ties": 0
+      "wins": 4,
+      "losses": 2,
+      "ties": 2
     },
-    "currentLeagueRank": 4,
-    "summary": "current league record: 3W / 3D / 2L; benchmark record: 3W / 0D / 5L"
+    "currentLeagueRank": 2,
+    "summary": "current league record: 5W / 1D / 2L; benchmark record: 4W / 2D / 2L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
