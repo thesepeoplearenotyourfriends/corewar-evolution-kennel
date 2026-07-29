@@ -1,0 +1,192 @@
+{
+  "id": "g111g90g74g60g511g4",
+  "name": "g111g90g74g60g511g4",
+  "parentIds": [
+    "g90g74g60g511g49g21"
+  ],
+  "mutationDelta": "b-operand 10→10",
+  "instructions": [
+    {
+      "opcode": "NOP",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 10
+      },
+      "raw": "NOP.F #4, 10"
+    },
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #4, 3"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 7
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F 7, @2"
+    },
+    {
+      "opcode": "JMP",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -2
+      },
+      "b": {
+        "mode": "$",
+        "value": 0
+      },
+      "raw": "JMP.F -2, 0"
+    }
+  ],
+  "start": 0,
+  "source": ";name g111g90g74g60g511g4\norg 0\nNOP.F #4, 10\nADD.F #4, 3\nMOV.F 7, @2\nJMP.F -2, 0\nend\n",
+  "generation": 11,
+  "profileId": "kennel94",
+  "record": {
+    "wins": 5,
+    "losses": 2,
+    "ties": 1
+  },
+  "score": 16.16,
+  "benchmarkRecord": {
+    "wins": 2,
+    "losses": 2,
+    "ties": 4
+  },
+  "benchmarkScore": 10.16,
+  "displayName": "Static Lantern",
+  "genomeHash": "337ca31b410b27a3",
+  "duplicateProvenance": {
+    "firstSeen": {
+      "id": "g111g90g74g60g511g4",
+      "generation": 11
+    },
+    "alsoAppearedAs": [
+      {
+        "id": "g90g74g60g511g49g21",
+        "generation": 9,
+        "parentIds": [
+          "g74g60g511g49g210g1"
+        ]
+      }
+    ]
+  },
+  "currentLeagueRank": 2,
+  "semantic": {
+    "schemaVersion": 1,
+    "instructionCount": 4,
+    "opcodeCounts": {
+      "NOP": 1,
+      "ADD": 1,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 2,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "337ca31b410b27a3",
+    "normalizedGenome": "NOP.F #4,$10\nADD.F #4,$3\nMOV.F $7,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "4 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4"
+    ]
+  },
+  "status": "active",
+  "retentionReason": "retained as broad competitor",
+  "selectionEvidence": {
+    "currentLeagueRecord": {
+      "wins": 5,
+      "losses": 2,
+      "ties": 1
+    },
+    "benchmarkRecord": {
+      "wins": 2,
+      "losses": 2,
+      "ties": 4
+    },
+    "currentLeagueRank": 2,
+    "summary": "current league record: 5W / 1D / 2L; benchmark record: 2W / 4D / 2L"
+  },
+  "warriorFacts": {
+    "schemaVersion": 1,
+    "instructionCount": 4,
+    "opcodeCounts": {
+      "NOP": 1,
+      "ADD": 1,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 2,
+      "$": 5,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 3,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 1,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "337ca31b410b27a3",
+    "normalizedGenome": "NOP.F #4,$10\nADD.F #4,$3\nMOV.F $7,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "4 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4"
+    ]
+  }
+}

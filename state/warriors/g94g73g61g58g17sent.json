@@ -51,20 +51,20 @@
   "generation": 9,
   "profileId": "kennel94",
   "record": {
-    "wins": 4,
-    "losses": 3,
+    "wins": 3,
+    "losses": 4,
     "ties": 1
   },
-  "score": 13.14,
+  "score": 10.14,
   "benchmarkRecord": {
-    "wins": 3,
+    "wins": 2,
     "losses": 3,
-    "ties": 2
+    "ties": 3
   },
-  "benchmarkScore": 11.14,
+  "benchmarkScore": 9.14,
   "displayName": "Tin Cricket",
   "genomeHash": "e1f3ab5376b8a317",
-  "currentLeagueRank": 9,
+  "currentLeagueRank": 10,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 3,
@@ -108,53 +108,22 @@
   "retentionReason": "retained as champion counter",
   "selectionEvidence": {
     "against": {
-      "opponentId": "g108g70g65g43g38g29",
-      "opponentName": "Velvet Lantern",
+      "opponentId": "g84g60g511g49g210g1",
+      "opponentName": "Sump Dagger",
       "bouts": 8,
       "record": {
-        "wins": 5,
-        "losses": 3,
-        "ties": 0
+        "wins": 6,
+        "losses": 1,
+        "ties": 1
       },
       "boutsDetail": [
         {
           "schemaVersion": 1,
-          "winner": 1,
-          "result": "w1",
-          "cycles": 8000,
-          "replayEventCount": 2842,
-          "eliminationCycle": 434,
-          "finalProcessCounts": [
-            0,
-            1
-          ],
-          "peakProcessCounts": [
-            1,
-            1
-          ],
-          "processBirths": [
-            0,
-            0
-          ],
-          "writesBySide": [
-            145,
-            2667
-          ],
-          "facts": [
-            "Warrior 1 won at cycle 8000.",
-            "Final processes: 0 and 1.",
-            "Peak processes: 1 and 1."
-          ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-a-0",
-          "order": "candidate-left"
-        },
-        {
-          "schemaVersion": 1,
           "winner": 0,
           "result": "w0",
           "cycles": 8000,
-          "replayEventCount": 2907,
-          "eliminationCycle": 479,
+          "replayEventCount": 2867,
+          "eliminationCycle": 359,
           "finalProcessCounts": [
             1,
             0
@@ -169,45 +138,14 @@
           ],
           "writesBySide": [
             2667,
-            160
+            120
           ],
           "facts": [
             "Warrior 0 won at cycle 8000.",
             "Final processes: 1 and 0.",
             "Peak processes: 1 and 1."
           ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-a-1",
-          "order": "opponent-left"
-        },
-        {
-          "schemaVersion": 1,
-          "winner": 1,
-          "result": "w1",
-          "cycles": 8000,
-          "replayEventCount": 2866,
-          "eliminationCycle": 506,
-          "finalProcessCounts": [
-            0,
-            1
-          ],
-          "peakProcessCounts": [
-            1,
-            1
-          ],
-          "processBirths": [
-            0,
-            0
-          ],
-          "writesBySide": [
-            169,
-            2667
-          ],
-          "facts": [
-            "Warrior 1 won at cycle 8000.",
-            "Final processes: 0 and 1.",
-            "Peak processes: 1 and 1."
-          ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-b-0",
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-a-0",
           "order": "candidate-left"
         },
         {
@@ -215,8 +153,8 @@
           "winner": 1,
           "result": "w1",
           "cycles": 8000,
-          "replayEventCount": 2829,
-          "eliminationCycle": 398,
+          "replayEventCount": 2780,
+          "eliminationCycle": 254,
           "finalProcessCounts": [
             0,
             1
@@ -230,7 +168,7 @@
             0
           ],
           "writesBySide": [
-            133,
+            85,
             2667
           ],
           "facts": [
@@ -238,7 +176,7 @@
             "Final processes: 0 and 1.",
             "Peak processes: 1 and 1."
           ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-b-1",
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-a-1",
           "order": "opponent-left"
         },
         {
@@ -246,8 +184,8 @@
           "winner": 0,
           "result": "w0",
           "cycles": 8000,
-          "replayEventCount": 2913,
-          "eliminationCycle": 497,
+          "replayEventCount": 2868,
+          "eliminationCycle": 361,
           "finalProcessCounts": [
             1,
             0
@@ -262,25 +200,25 @@
           ],
           "writesBySide": [
             2667,
-            166
+            121
           ],
           "facts": [
             "Warrior 0 won at cycle 8000.",
             "Final processes: 1 and 0.",
             "Peak processes: 1 and 1."
           ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-c-0",
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-b-0",
           "order": "candidate-left"
         },
         {
           "schemaVersion": 1,
-          "winner": 1,
-          "result": "w1",
+          "winner": null,
+          "result": "tie",
           "cycles": 8000,
-          "replayEventCount": 2854,
-          "eliminationCycle": 470,
+          "replayEventCount": 5413,
+          "eliminationCycle": null,
           "finalProcessCounts": [
-            0,
+            1,
             1
           ],
           "peakProcessCounts": [
@@ -292,15 +230,15 @@
             0
           ],
           "writesBySide": [
-            157,
+            2667,
             2667
           ],
           "facts": [
-            "Warrior 1 won at cycle 8000.",
-            "Final processes: 0 and 1.",
+            "Neither side eliminated the other before cycle 8000.",
+            "Final processes: 1 and 1.",
             "Peak processes: 1 and 1."
           ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-c-1",
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-b-1",
           "order": "opponent-left"
         },
         {
@@ -308,8 +246,8 @@
           "winner": 0,
           "result": "w0",
           "cycles": 8000,
-          "replayEventCount": 2910,
-          "eliminationCycle": 489,
+          "replayEventCount": 2833,
+          "eliminationCycle": 257,
           "finalProcessCounts": [
             1,
             0
@@ -324,14 +262,76 @@
           ],
           "writesBySide": [
             2667,
-            163
+            86
           ],
           "facts": [
             "Warrior 0 won at cycle 8000.",
             "Final processes: 1 and 0.",
             "Peak processes: 1 and 1."
           ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-d-0",
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-c-0",
+          "order": "candidate-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2937,
+          "eliminationCycle": 569,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            190
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-c-1",
+          "order": "opponent-left"
+        },
+        {
+          "schemaVersion": 1,
+          "winner": 0,
+          "result": "w0",
+          "cycles": 8000,
+          "replayEventCount": 2799,
+          "eliminationCycle": 155,
+          "finalProcessCounts": [
+            1,
+            0
+          ],
+          "peakProcessCounts": [
+            1,
+            1
+          ],
+          "processBirths": [
+            0,
+            0
+          ],
+          "writesBySide": [
+            2667,
+            52
+          ],
+          "facts": [
+            "Warrior 0 won at cycle 8000.",
+            "Final processes: 1 and 0.",
+            "Peak processes: 1 and 1."
+          ],
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-d-0",
           "order": "candidate-left"
         },
         {
@@ -339,8 +339,8 @@
           "winner": 1,
           "result": "w1",
           "cycles": 8000,
-          "replayEventCount": 2876,
-          "eliminationCycle": 534,
+          "replayEventCount": 2862,
+          "eliminationCycle": 494,
           "finalProcessCounts": [
             0,
             1
@@ -354,7 +354,7 @@
             0
           ],
           "writesBySide": [
-            179,
+            165,
             2667
           ],
           "facts": [
@@ -362,13 +362,13 @@
             "Final processes: 0 and 1.",
             "Peak processes: 1 and 1."
           ],
-          "seed": "counter-g94g73g61g58g17sent-g108g70g65g43g38g29-d-1",
+          "seed": "counter-g94g73g61g58g17sent-g84g60g511g49g210g1-d-1",
           "order": "opponent-left"
         }
       ]
     },
-    "overallRank": 9,
-    "summary": "vs Velvet Lantern: 5W / 0D / 3L across 8 balanced bouts; overall league rank #9"
+    "overallRank": 10,
+    "summary": "vs Sump Dagger: 6W / 1D / 1L across 8 balanced bouts; overall league rank #10"
   },
   "warriorFacts": {
     "schemaVersion": 1,

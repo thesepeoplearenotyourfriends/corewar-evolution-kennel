@@ -1,0 +1,162 @@
+{
+  "id": "g130g84g60g511g49g2",
+  "name": "g130g84g60g511g49g2",
+  "parentIds": [
+    "g84g60g511g49g210g1"
+  ],
+  "mutationDelta": "single-instruction deletion",
+  "instructions": [
+    {
+      "opcode": "ADD",
+      "modifier": "F",
+      "a": {
+        "mode": "#",
+        "value": 4
+      },
+      "b": {
+        "mode": "$",
+        "value": 3
+      },
+      "raw": "ADD.F #4, 3"
+    },
+    {
+      "opcode": "MOV",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": 2
+      },
+      "b": {
+        "mode": "@",
+        "value": 2
+      },
+      "raw": "MOV.F 2, @2"
+    },
+    {
+      "opcode": "JMP",
+      "modifier": "F",
+      "a": {
+        "mode": "$",
+        "value": -2
+      },
+      "b": {
+        "mode": "$",
+        "value": 0
+      },
+      "raw": "JMP.F -2, 0"
+    }
+  ],
+  "start": 0,
+  "source": ";name g130g84g60g511g49g2\norg 0\nADD.F #4, 3\nMOV.F 2, @2\nJMP.F -2, 0\nend\n",
+  "generation": 13,
+  "profileId": "kennel94",
+  "record": {
+    "wins": 2,
+    "losses": 5,
+    "ties": 1
+  },
+  "score": 7.14,
+  "benchmarkRecord": {
+    "wins": 3,
+    "losses": 3,
+    "ties": 2
+  },
+  "benchmarkScore": 11.14,
+  "genomeHash": "36a5a71e6f767dcf",
+  "currentLeagueRank": 9,
+  "semantic": {
+    "schemaVersion": 1,
+    "instructionCount": 3,
+    "opcodeCounts": {
+      "ADD": 1,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 1,
+      "$": 4,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 2,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "36a5a71e6f767dcf",
+    "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "3 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4"
+    ]
+  },
+  "status": "active",
+  "retentionReason": "retained as behavioral outlier",
+  "selectionEvidence": {
+    "minGenomeDistanceToActive": 1,
+    "peakProcesses": 1,
+    "opcodeCounts": {
+      "ADD": 1,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "currentLeagueRecord": {
+      "wins": 2,
+      "losses": 5,
+      "ties": 1
+    },
+    "summary": "genome distance to active field: 1.00; peak processes: 1; current league record: 2W / 1D / 5L"
+  },
+  "warriorFacts": {
+    "schemaVersion": 1,
+    "instructionCount": 3,
+    "opcodeCounts": {
+      "ADD": 1,
+      "MOV": 1,
+      "JMP": 1
+    },
+    "addressingModeCounts": {
+      "#": 1,
+      "$": 4,
+      "@": 1
+    },
+    "hasSpl": false,
+    "backwardBranches": [
+      {
+        "at": 2,
+        "opcode": "JMP",
+        "offset": -2,
+        "loopLength": 2
+      }
+    ],
+    "fixedArithmeticPointerSteps": [
+      {
+        "at": 0,
+        "opcode": "ADD",
+        "step": 4,
+        "targetMode": "$",
+        "targetOffset": 3
+      }
+    ],
+    "genomeHash": "36a5a71e6f767dcf",
+    "normalizedGenome": "ADD.F #4,$3\nMOV.F $2,@2\nJMP.F $-2,$0\norg 0",
+    "facts": [
+      "3 instructions",
+      "contains a backward JMP forming a 2-instruction loop",
+      "ADD uses fixed immediate step 4"
+    ]
+  }
+}

@@ -64,20 +64,20 @@
   "generation": 10,
   "profileId": "kennel94",
   "record": {
-    "wins": 5,
-    "losses": 3,
-    "ties": 0
+    "wins": 3,
+    "losses": 2,
+    "ties": 3
   },
-  "score": 15.16,
+  "score": 12.16,
   "benchmarkRecord": {
-    "wins": 4,
-    "losses": 4,
-    "ties": 0
+    "wins": 5,
+    "losses": 2,
+    "ties": 1
   },
-  "benchmarkScore": 12.16,
+  "benchmarkScore": 16.16,
   "displayName": "Sump Bird",
   "genomeHash": "90a2016f19b4237f",
-  "currentLeagueRank": 3,
+  "currentLeagueRank": 7,
   "semantic": {
     "schemaVersion": 1,
     "instructionCount": 4,
@@ -119,20 +119,20 @@
     ]
   },
   "status": "active",
-  "retentionReason": "retained as broad competitor",
+  "retentionReason": "retained as roster fill after evidence lanes",
   "selectionEvidence": {
     "currentLeagueRecord": {
-      "wins": 5,
-      "losses": 3,
-      "ties": 0
+      "wins": 3,
+      "losses": 2,
+      "ties": 3
     },
     "benchmarkRecord": {
-      "wins": 4,
-      "losses": 4,
-      "ties": 0
+      "wins": 5,
+      "losses": 2,
+      "ties": 1
     },
-    "currentLeagueRank": 3,
-    "summary": "current league record: 5W / 0D / 3L; benchmark record: 4W / 0D / 4L"
+    "currentLeagueRank": 7,
+    "summary": "current league rank #7; current league record: 3W / 3D / 2L"
   },
   "warriorFacts": {
     "schemaVersion": 1,
